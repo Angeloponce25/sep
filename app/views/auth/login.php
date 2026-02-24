@@ -16,7 +16,7 @@
     <!-- lockscreen credentials (contains the form) -->
     <form class="lockscreen-credentials" id="formLogin">
       <div class="input-group">
-        <input type="password" class="form-control" placeholder="password">
+        <input type="text" class="form-control" placeholder="DNI" name="username" id="username">
 
         <div class="input-group-btn">
           <button type="submit" id="login" name="login" class="btn"><i class="fa fa-arrow-right text-muted"></i></button>

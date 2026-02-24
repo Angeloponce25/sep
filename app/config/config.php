@@ -20,10 +20,10 @@ define('PUBLIC_PATH', $_SERVER['DOCUMENT_ROOT']);
    BASE DE DATOS
 ============================== */
 
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'sep');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_HOST', '192.168.1.151');
+define('DB_NAME', 'gperu_cmdn');
+define('DB_USER', 'webmaster');
+define('DB_PASS', 'super');
 
 /* ==============================
    SESIONES
