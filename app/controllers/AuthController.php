@@ -13,11 +13,11 @@ class AuthController {
 
         session_start();
 
-        /*require_once APP_PATH . '/models/User.php';
-        $userModel = new User();*/
-
-        $username = $_POST['username'] ?? '';  
+        require_once APP_PATH . '/models/User.php';
+        $userModel = new User();
 /*
+        $username = $_POST['username'] ?? '';  
+
         $user = $userModel->findByUsername($username);
 
         if ($user && password_verify($password, $user['password'])) {
