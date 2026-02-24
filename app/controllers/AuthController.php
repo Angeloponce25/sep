@@ -13,8 +13,8 @@ class AuthController {
 
         session_start();
 
-        require_once APP_PATH . '/models/User.php';
-        $userModel = new User();
+        /*require_once APP_PATH . '/models/User.php';
+        $userModel = new User();*/
 
         $username = $_POST['username'] ?? '';  
 /*
