@@ -53,6 +53,11 @@ body.lockscreen {
   width: 80px;
   margin: 15px 0;
 }
+
+.input-group{
+  display: flex;
+  align-items: center;
+}
 .input-group-append{
   display: flex;
   align-items: center;
