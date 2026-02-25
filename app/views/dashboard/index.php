@@ -3,19 +3,19 @@
 <?php require APP_PATH . '/views/layouts/sidebar.php'; ?>
 
 <?php
+$paciente = $data['data'];
 
-var_dump($data);
-$nombreCompleto = ($data['pac_nombres'] ?? '') . ' ' .
-  ($data['pac_primer_ape'] ?? '') . ' ' .
-  ($data['pac_segundo_ape'] ?? '');
+$nombreCompleto = ($paciente['pac_nombres'] ?? '') . ' ' .
+                  ($paciente['pac_primer_ape'] ?? '') . ' ' .
+                  ($paciente['pac_segundo_ape'] ?? '');
 
 $edad = '';
 
-if (!empty($data['pac_fecnac'])) {
-  $edad = date_diff(
-    date_create($data['pac_fecnac']),
-    date_create('today')
-  )->y . ' años';
+if (!empty($paciente['pac_fecnac'])) {
+    $edad = date_diff(
+        date_create($paciente['pac_fecnac']),
+        date_create('today')
+    )->y . ' años';
 }
 ?>
 
@@ -32,7 +32,7 @@ if (!empty($data['pac_fecnac'])) {
               src="<?= BASE_URL ?>/img/user.png">
 
             <h3 class="profile-username text-center">
-              <?= $nombreCompleto ?>
+              <?= $paciente['pac_nombres'] ?>
             </h3>
 
             <p class="text-muted text-center">Paciente</p>
@@ -42,7 +42,7 @@ if (!empty($data['pac_fecnac'])) {
               <li class="list-group-item">
                 <b>DNI</b>
                 <span class="pull-right">
-                  <?= $data['numero_documento'] ?? '' ?>
+                  <?= $paciente['numero_documento'] ?? '' ?>
                 </span>
               </li>
 
