@@ -3,15 +3,16 @@
 <?php require APP_PATH . '/views/layouts/sidebar.php'; ?>
 
 <?php
+var_dump($data);
 $nombreCompleto = ($data['pac_nombres'] ?? '') . ' ' .
                   ($data['pac_primera_ape'] ?? '') . ' ' .
                   ($data['pac_segundo_ape'] ?? '');
 
 $edad = '';
 
-if (!empty($data['pac_fecnasc'])) {
+if (!empty($paciente['pac_fecnasc'])) {
     $edad = date_diff(
-        date_create($data['pac_fecnasc']),
+        date_create($paciente['pac_fecnasc']),
         date_create('today')
     )->y . ' años';
 }
@@ -44,7 +45,7 @@ if (!empty($data['pac_fecnasc'])) {
               <li class="list-group-item">
                 <b>DNI</b>
                 <span class="pull-right">
-                  <?= $data['numero_documento'] ?? '' ?>
+                  <?= $paciente['numero_documento'] ?? '' ?>
                 </span>
               </li>
 
