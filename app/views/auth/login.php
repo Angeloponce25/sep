@@ -46,5 +46,8 @@ $usuario = 'webmaster';
 $contrasena = 'super';
 $base_de_datos = "gperu_cmdn";
 
+// Crear la conexión utilizando mysqli
+$conexion = new mysqli($servidor, $usuario, $contrasena, $base_de_datos);
+
 
 ?>
