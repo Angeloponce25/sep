@@ -5,7 +5,7 @@
 <?php
 var_dump($data);
 $nombreCompleto = ($data['pac_nombres'] ?? '') . ' ' .
-                  ($data['pac_primera_ape'] ?? '') . ' ' .
+                  ($data['pac_primer_ape'] ?? '') . ' ' .
                   ($data['pac_segundo_ape'] ?? '');
 
 /*$edad = '';
@@ -33,7 +33,7 @@ if (!empty($paciente['pac_fecnasc'])) {
                  src="<?= BASE_URL ?>/img/user.png">
 
             <h3 class="profile-username text-center">
-              <?= trim($nombreCompleto) ?>
+              <?= $data['pac_nombres'] ?>
             </h3>
 
             <p class="text-muted text-center">
