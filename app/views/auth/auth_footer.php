@@ -36,15 +36,7 @@
 
                     success: function(response){
 
-                        if(response.trim() === "success"){
-                            window.location.href = "<?= BASE_URL ?>/dashboard";
-                        } else {
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'Verifica tus credenciales e intenta de nuevo'
-                            });
-                        }
+                        console.log(response);
 
                     },
                     error: function(){
