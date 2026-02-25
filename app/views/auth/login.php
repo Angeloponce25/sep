@@ -38,3 +38,17 @@
     All rights reserved
   </div>
 </div>
+
+
+<?php
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
+$conn = new mysqli(
+    "192.168.1.151",
+    "webmaster",
+    "super",
+    "gperu_cmdn",
+    3306
+);
+
+echo "CONECTÓ OK";
