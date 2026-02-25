@@ -27,16 +27,19 @@
         <!-- /.lockscreen credentials -->
 
     </div>
-    <!-- /.lockscreen-item -->
-    <div class="help-block text-center">
-        Enter your password to retrieve your session
-    </div>
-    <div class="text-center">
-        <a href="login.html">Or sign in as a different user</a>
-    </div>
+    <!-- Mensaje -->
+  <div class="help-block text-center">
+    Acceso al sistema de evaluaciones psicológicas del Centro Médico Divino Niño
+  </div>
+
+  <div class="text-center">
+    <small class="text-muted">
+      Mollendo - Perú
+    </small>
+  </div>
     <!-- Footer -->
     <div class="lockscreen-footer text-center">
-    <strong>Centro Médico Divino Niño</strong><br>
+    <strong>Centro Médico Divino Niño Mollendo</strong><br>
     Sistema SEP - Evaluación Psicológica<br>
     © <?= date("Y") ?> Todos los derechos reservados
   </div>
