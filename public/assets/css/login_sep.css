@@ -58,7 +58,7 @@ body.lockscreen {
   border-radius: 20px;
   padding: 10px;
 }
-input-group-append{
+.input-group-append{
   display: flex;
 }
 
