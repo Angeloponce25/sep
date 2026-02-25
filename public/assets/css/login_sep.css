@@ -1,3 +1,5 @@
+/* FONDO DE LOGIN */
+/*---------------*/
 body.lockscreen {
   background: url("../../img/bannerclinica.png") no-repeat center center fixed;
   background-size: cover;
@@ -28,4 +30,49 @@ body.lockscreen::before {
 
 .lockscreen-name {
   color: white;
+}
+  /*--------------------*/
+ /* ESTILO FORMULARIO */
+/*------------------*/
+
+/* Tarjeta del login */
+.lockscreen-item {
+  background: rgba(255, 255, 255, 0.97);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 35px rgba(0,0,0,0.3);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+/* Efecto cuando pasas el mouse */
+.lockscreen-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 15px 40px rgba(0,0,0,0.4);
+}
+
+/* Imagen del usuario */
+.lockscreen-image img {
+  border-radius: 50%;
+  border: 4px solid #0d6efd;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Input del DNI */
+.lockscreen-credentials .form-control {
+  border-radius: 8px;
+  height: 45px;
+  font-size: 16px;
+}
+
+/* Botón de acceso */
+.lockscreen-credentials .btn {
+  border-radius: 8px;
+  background: #0d6efd;
+  color: white;
+  transition: 0.3s;
+}
+
+.lockscreen-credentials .btn:hover {
+  background: #084298;
 }
