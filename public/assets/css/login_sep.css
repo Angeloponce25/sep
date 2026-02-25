@@ -1,77 +1,51 @@
-/* FONDO */
-body.lockscreen {
-  background: url("../../img/background2.png") no-repeat center center fixed;
-  background-size: cover;
+/* LOGIN MODERNO ADMIN LTE */
+.modern-login {
+  width: 900px;
 }
 
-
-
-/* Centrar todo dentro del login */
-.lockscreen-wrapper {
-  text-align: center;
-}
-
-/* Logo del centro médico */
-.lockscreen-logo a {
-  font-size: 28px;
-  font-weight: 600;
-  color: white;
-}
-
-/* Nombre del sistema */
-.lockscreen-name {
-  font-size: 18px;
-  margin-bottom: 20px;
-  color: white !important;
-}
-
-/* Tarjeta del login */
-.lockscreen-item {
+/* Tarjeta principal */
+.login-card {
+  display: flex;
   background: white;
-  padding: 35px 30px;
   border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-  max-width: 380px;
-  margin: auto;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* Logo dentro del login */
-.lockscreen-image {
-  margin-bottom: 20px;
+/* LADO IZQUIERDO */
+.login-left {
+  width: 50%;
+  background: linear-gradient(135deg,#00c9a7,#00a8ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.lockscreen-image img {
-  width: 100px;
-  height: auto;
-  border-radius: 10px;
+.login-left img {
+  width: 70%;
 }
 
-/* Input DNI */
-.lockscreen-credentials .form-control {
-  height: 45px;
-  border-radius: 8px;
+/* LADO DERECHO */
+.login-right {
+  width: 50%;
+  padding: 40px;
   text-align: center;
 }
 
-/* Botón */
-.input-group-btn .btn {
-  border-radius: 8px;
-  width: 50px;
+/* LOGO */
+.logo-center img {
+  width: 80px;
+  margin: 15px 0;
 }
 
-/* Mensaje */
-.help-block {
-  margin-top: 15px;
-  color: white;
+/* INPUT */
+.input-modern input {
+  border-radius: 20px;
+  padding: 10px;
 }
 
-/* Ubicación */
-.text-muted {
-  color: #e0e0e0 !important;
-}
-
-/* Footer */
-.lockscreen-footer {
-  margin-top: 20px;
-  color: white;
+/* TITULOS */
+.lockscreen-name {
+  font-weight: bold;
+  margin-bottom: 10px;
 }
