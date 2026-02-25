@@ -17,10 +17,8 @@ class DashboardController extends Controller {
     }
 
     public function index()
-    {       
-
-        $id = $_SESSION['user']['id_paciente'] ?? null;        
-        $paciente = $this->userModel->getPacienteById($id);
+    {     
+        $paciente = $this->userModel->getPacienteById($_SESSION['user']['id_paciente']);
 
         $this->view('dashboard/index', [
             'title' => 'Dashboard',
