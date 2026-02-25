@@ -57,7 +57,7 @@ body.lockscreen {
 .input-modern input {
   border-radius: 20px;
   padding: 10px;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
 }
 .input-group-append{
   display: flex;
@@ -66,7 +66,8 @@ body.lockscreen {
 /* TITULOS */
 .lockscreen-name {
   font-weight: bold;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
+  font-size: 3.5rem; 
 }
 
 .help-block{
