@@ -17,12 +17,11 @@ body.lockscreen {
   padding: 25px;
   border-radius: 8px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-  border-top: 4px solid #0d6efd;
 }
 
 /* Logo */
 .lockscreen-logo a {
-  color: white;
+  color: rgb(47, 0, 255);
   font-size: 30px;
   font-weight: bold;
 }
