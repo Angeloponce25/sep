@@ -6,55 +6,72 @@ body.lockscreen {
 
 
 
-/* Contenedor */
+/* Centrar todo dentro del login */
 .lockscreen-wrapper {
-  margin-top: 70px;
+  text-align: center;
+}
+
+/* Logo del centro médico */
+.lockscreen-logo a {
+  font-size: 28px;
+  font-weight: 600;
+  color: white;
+}
+
+/* Nombre del sistema */
+.lockscreen-name {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: white !important;
 }
 
 /* Tarjeta del login */
 .lockscreen-item {
   background: white;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  padding: 35px 30px;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  max-width: 380px;
+  margin: auto;
 }
 
-/* Logo */
-.lockscreen-logo a {
-  color: rgb(47, 0, 255);
-  font-size: 30px;
-  font-weight: bold;
+/* Logo dentro del login */
+.lockscreen-image {
+  margin-bottom: 20px;
 }
 
-/* Nombre del sistema */
-.lockscreen-name {
-  color: #000000;
-  font-size: 18px;
-}
-
-/* Imagen */
 .lockscreen-image img {
-  border-radius: 8px;
-  width: 80px;
+  width: 100px;
+  height: auto;
+  border-radius: 10px;
 }
 
-/* Input */
-.form-control {
+/* Input DNI */
+.lockscreen-credentials .form-control {
   height: 45px;
-  border-radius: 6px;
+  border-radius: 8px;
+  text-align: center;
 }
 
 /* Botón */
 .input-group-btn .btn {
-  border-radius: 6px;
-  background: #0d6efd;
+  border-radius: 8px;
+  width: 50px;
 }
 
-.input-group-btn .btn:hover {
-  background: #0b5ed7;
+/* Mensaje */
+.help-block {
+  margin-top: 15px;
+  color: white;
+}
+
+/* Ubicación */
+.text-muted {
+  color: #e0e0e0 !important;
 }
 
 /* Footer */
 .lockscreen-footer {
+  margin-top: 20px;
   color: white;
 }
