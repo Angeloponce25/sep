@@ -1,6 +1,6 @@
 <?php
 
-require_once '../app/models/User.php';
+/*require_once '../app/models/User.php';*/
 
 class DashboardController extends Controller {
 
@@ -15,6 +15,8 @@ class DashboardController extends Controller {
 
     public function index()
     {
+
+        require_once APP_PATH . '/models/User.php';
         $userModel = new User();
 
         $paciente = $userModel->getPacienteById($_SESSION['user']['id_paciente']);
