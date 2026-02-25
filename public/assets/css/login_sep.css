@@ -1,7 +1,8 @@
+
+
 /* LOGIN MODERNO ADMIN LTE */
 .modern-login {
   width: 900px;
-  background-image: url('../../img/fondo_clinica.jpeg');
 }
 
 /* CENTRAR TODO EL LOGIN EN LA PANTALLA */
@@ -10,6 +11,7 @@ body.lockscreen {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-image: url('<?= BASE_URL ?>/img/fondo_clinica.jpeg');
 }
 
 /* Contenedor principal */
