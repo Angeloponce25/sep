@@ -20,7 +20,15 @@ class AuthController {
 
         $user = $userModel->findByUsername($username);
 
-        echo var_dump($user);
+        if ($user) {
+
+            $_SESSION['user'] = $user['numero_documento'];
+            $_SESSION['login_time'] = time();
+
+            echo "success";
+        } else {
+            echo "error";
+        }
     }
 
     public function logout() {
