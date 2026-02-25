@@ -1,64 +1,41 @@
 <div class="lockscreen-wrapper">
-  
-  <!-- Logo de la clínica -->
-  <div class="lockscreen-logo">
-    <a href="#"><b>Clínica</b> Salud+</a>
-  </div>
-
-  <!-- Nombre del sistema -->
-  <div class="lockscreen-name text-primary">
-    Sistema de Acceso Clínico
-  </div>
-
-  <!-- TARJETA DEL LOGIN -->
-  <div class="lockscreen-item shadow-lg rounded">
-
-    <!-- Imagen del usuario o logo -->
-    <div class="lockscreen-image">
-      <img src="<?= BASE_URL ?>/img/doctor.png" alt="Usuario">
+    <div class="lockscreen-logo">
+        <a href="../../index2.html"><b>Admin</b>LTE</a>
     </div>
+    <!-- User name -->
+    <div class="lockscreen-name">Luis Bernedo Prueba</div>
 
-    <!-- FORMULARIO -->
-    <form class="lockscreen-credentials" id="formLogin">
-      <div class="input-group">
-        <input 
-          type="text" 
-          class="form-control" 
-          placeholder="Ingrese su DNI"
-          name="username" 
-          id="username"
-          required
-        >
-
-        <div class="input-group-btn">
-          <button 
-            type="submit" 
-            id="login" 
-            name="login" 
-            class="btn btn-primary">
-            <i class="fa fa-sign-in"></i>
-          </button>
+    <!-- START LOCK SCREEN ITEM -->
+    <div class="lockscreen-item">
+        <!-- lockscreen image -->
+        <div class="lockscreen-image">
+            <img src="<?= BASE_URL ?>/img/user1-128x128.jpg" alt="User Image">
         </div>
-      </div>
-    </form>
+        <!-- /.lockscreen-image -->
 
-  </div>
+        <!-- lockscreen credentials (contains the form) -->
+        <form class="lockscreen-credentials" id="formLogin">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="DNI" name="username" id="username">
 
-  <!-- MENSAJE -->
-  <div class="help-block text-center">
-    Ingrese su DNI para acceder al sistema clínico
-  </div>
+                <div class="input-group-btn">
+                    <button type="submit" id="login" name="login" class="btn"><i
+                            class="fa fa-arrow-right text-muted"></i></button>
+                </div>
+            </div>
+        </form>
+        <!-- /.lockscreen credentials -->
 
-  <div class="text-center">
-    <a href="login.html" class="text-info">
-      Acceder con otro usuario
-    </a>
-  </div>
-
-  <!-- FOOTER -->
-  <div class="lockscreen-footer text-center">
-    <strong>Sistema Clínico</strong><br>
-    © <?= date("Y") ?> Todos los derechos reservados
-  </div>
-
+    </div>
+    <!-- /.lockscreen-item -->
+    <div class="help-block text-center">
+        Enter your password to retrieve your session
+    </div>
+    <div class="text-center">
+        <a href="login.html">Or sign in as a different user</a>
+    </div>
+    <div class="lockscreen-footer text-center">
+        Copyright &copy; 2014-2015 <b><a href="http://almsaeedstudio.com" class="text-black">Almsaeed Studio</a></b><br>
+        All rights reserved
+    </div>
 </div>
