@@ -13,18 +13,31 @@
         </div>
         <!-- /.lockscreen-image -->
 
-        <!-- lockscreen credentials (contains the form) -->
-        <form class="lockscreen-credentials" id="formLogin">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="DNI" name="username" id="username">
+        <!-- Formulario -->
+    <form class="lockscreen-credentials" id="formLogin">
+      <div class="input-group">
+        <input 
+          type="text"
+          class="form-control"
+          placeholder="Ingrese su DNI"
+          name="username"
+          id="username"
+          maxlength="8"
+          required
+        >
 
-                <div class="input-group-btn">
-                    <button type="submit" id="login" name="login" class="btn"><i
-                            class="fa fa-arrow-right text-muted"></i></button>
-                </div>
-            </div>
-        </form>
-        <!-- /.lockscreen credentials -->
+        <div class="input-group-btn">
+          <button 
+            type="submit"
+            id="login"
+            name="login"
+            class="btn btn-primary">
+            <i class="fa fa-sign-in"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+
 
     </div>
     <!-- Mensaje -->
