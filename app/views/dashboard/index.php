@@ -3,7 +3,6 @@
 <?php require APP_PATH . '/views/layouts/sidebar.php'; ?>
 
 <?php
-var_dump($data);
 $nombreCompleto = ($data['pac_nombres'] ?? '') . ' ' .
                   ($data['pac_primer_ape'] ?? '') . ' ' .
                   ($data['pac_segundo_ape'] ?? '');
