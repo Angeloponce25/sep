@@ -15,13 +15,12 @@ class AuthController {
 
         require_once APP_PATH . '/models/User.php';
         $userModel = new User();
-/*
+
         $username = $_POST['username'] ?? '';
-        $password = $_POST['password'] ?? '';
 
         $user = $userModel->findByUsername($username);
 
-        if ($user && password_verify($password, $user['password'])) {
+        if ($user) {
 
             $_SESSION['user'] = $user['username'];
             $_SESSION['login_time'] = time();
@@ -30,10 +29,6 @@ class AuthController {
         } else {
             echo "error";
         }
-            $_SESSION['user'] = 'Angelo';
-            $_SESSION['login_time'] = time();
-            echo "success";//
-        */
     }
 
     public function logout() {
