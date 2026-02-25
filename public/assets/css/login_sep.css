@@ -1,6 +1,7 @@
 /* LOGIN MODERNO ADMIN LTE */
 .modern-login {
   width: 900px;
+  height: 900px;
 }
 
 /* Tarjeta principal */
@@ -15,7 +16,7 @@
 /* LADO IZQUIERDO */
 .login-left {
   width: 50%;
-  background: linear-gradient(135deg,#00c9a7,#00a8ff);
+  background: linear-gradient(135deg,#0548ff,#00a8ff);
   display: flex;
   align-items: center;
   justify-content: center;
