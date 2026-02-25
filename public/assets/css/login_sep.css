@@ -1,5 +1,7 @@
 body.lockscreen {
   background-image: url("../../img/fondo_clinica.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /* LOGIN MODERNO ADMIN LTE */
