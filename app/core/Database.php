@@ -8,7 +8,7 @@ class Database {
 
         mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-        $this->conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        $this->conn = new mysqli("192.168.1.151","webmaster","super","gperu_cmdn");
         $this->conn->set_charset("utf8");
     }
 
