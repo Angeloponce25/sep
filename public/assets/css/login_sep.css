@@ -1,11 +1,10 @@
-/* FONDO DE LOGIN */
-/*---------------*/
+/* FONDO */
 body.lockscreen {
-  background: url("../../img/background2.png") no-repeat center center fixed;
+  background: url("../../img/bannerclinica.png") no-repeat center center fixed;
   background-size: cover;
 }
 
-/* Capa oscura encima del fondo */
+/* Capa para mejorar lectura */
 body.lockscreen::before {
   content: "";
   position: fixed;
@@ -13,76 +12,59 @@ body.lockscreen::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    rgba(255, 255, 255, 0),
-    rgba(0, 0, 0, 0)
-  );
+  background: rgba(0, 40, 80, 0.45);
 }
 
 /* Contenedor */
 .lockscreen-wrapper {
-  margin-top: 80px;
-  animation: aparecerLogin 0.7s ease;
+  margin-top: 70px;
 }
 
 /* Tarjeta del login */
 .lockscreen-item {
-  background: rgba(255,255,255,0.95);
-  padding: 30px;
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 25px 60px rgba(0,0,0,0.35);
-  transition: 0.3s;
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  border-top: 4px solid #0d6efd;
 }
 
-.lockscreen-item:hover {
-  transform: translateY(-5px);
-}
-
-/* Logo principal */
+/* Logo */
 .lockscreen-logo a {
   color: white;
-  font-size: 32px;
-  font-weight: 600;
-  text-shadow: 0px 3px 10px rgba(0,0,0,0.4);
+  font-size: 30px;
+  font-weight: bold;
 }
 
 /* Nombre del sistema */
 .lockscreen-name {
-  color: white;
+  color: #f8f9fa;
   font-size: 18px;
-  text-shadow: 0px 3px 10px rgba(0,0,0,0.4);
 }
 
-/* Imagen del login */
+/* Imagen */
 .lockscreen-image img {
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  border-radius: 8px;
+  width: 80px;
 }
 
-/* Input moderno */
+/* Input */
 .form-control {
-  height: 48px;
-  border-radius: 30px;
-  padding-left: 18px;
-  border: 1px solid #ddd;
+  height: 45px;
+  border-radius: 6px;
 }
 
 /* Botón */
 .input-group-btn .btn {
-  border-radius: 30px;
-  width: 55px;
+  border-radius: 6px;
   background: #0d6efd;
 }
 
-/* Animación */
-@keyframes aparecerLogin {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.input-group-btn .btn:hover {
+  background: #0b5ed7;
+}
+
+/* Footer */
+.lockscreen-footer {
+  color: white;
 }
