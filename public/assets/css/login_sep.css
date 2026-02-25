@@ -58,8 +58,8 @@ body.lockscreen {
   border-radius: 20px;
   padding: 10px;
 }
-input-group-append .btn {
-  border-radius: 20px;
+input-group-append{
+  display: flex;
 }
 
 /* TITULOS */
