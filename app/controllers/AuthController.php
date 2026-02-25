@@ -20,7 +20,7 @@ class AuthController {
 
         $user = $userModel->findByUsername($username);
 
-        echo $user;
+        echo var_dump($user);
     }
 
     public function logout() {
