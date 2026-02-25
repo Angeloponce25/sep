@@ -2,7 +2,7 @@
 
   <!-- Nombre del centro médico -->
   <div class="lockscreen-logo">
-    <a href="#"><b>Centro Médico</b> Divino Niño</a>
+    <a href="#"><b>Centro Médico</b> Divino Niño Mollendo</a>
   </div>
 
   <!-- Nombre del sistema -->
