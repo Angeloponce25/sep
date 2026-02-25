@@ -14,6 +14,9 @@ class DashboardController extends Controller {
             header("Location: " . BASE_URL . "/auth/login");
             exit;
         }
+
+        $this->userModel = new User();
+
     }
 
     public function index()
