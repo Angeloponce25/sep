@@ -22,7 +22,7 @@ class AuthController {
 
         if ($user) {
 
-            $_SESSION['user'] = $user['username'];
+            $_SESSION['user'] = $user['paciente'];
             $_SESSION['login_time'] = time();
 
             echo "success";
