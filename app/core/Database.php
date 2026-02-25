@@ -6,7 +6,7 @@ class Database {
 
     public function __construct() {
 
-        echo 'holis';
+        var_dump(DB_HOST, DB_USER, DB_PASS, DB_NAME);
     }
 
 }
