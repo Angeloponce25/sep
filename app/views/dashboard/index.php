@@ -4,73 +4,74 @@
 
 <?php
 
+var_dump($data);
 $nombreCompleto = ($data['pac_nombres'] ?? '') . ' ' .
-                  ($data['pac_primer_ape'] ?? '') . ' ' .
-                  ($data['pac_segundo_ape'] ?? '');
+  ($data['pac_primer_ape'] ?? '') . ' ' .
+  ($data['pac_segundo_ape'] ?? '');
 
 $edad = '';
 
 if (!empty($data['pac_fecnac'])) {
-    $edad = date_diff(
-        date_create($data['pac_fecnac']),
-        date_create('today')
-    )->y . ' años';
+  $edad = date_diff(
+    date_create($data['pac_fecnac']),
+    date_create('today')
+  )->y . ' años';
 }
 ?>
 
 <div class="content-wrapper">
-<section class="content">
+  <section class="content">
 
-<div class="row">
-<div class="col-md-12">
+    <div class="row">
+      <div class="col-md-12">
 
-<div class="box box-primary">
-<div class="box-body box-profile">
+        <div class="box box-primary">
+          <div class="box-body box-profile">
 
-<img class="profile-user-img img-responsive img-circle"
-     src="<?= BASE_URL ?>/img/user.png">
+            <img class="profile-user-img img-responsive img-circle"
+              src="<?= BASE_URL ?>/img/user.png">
 
-<h3 class="profile-username text-center">
-    <?= $nombreCompleto ?>
-</h3>
+            <h3 class="profile-username text-center">
+              <?= $nombreCompleto ?>
+            </h3>
 
-<p class="text-muted text-center">Paciente</p>
+            <p class="text-muted text-center">Paciente</p>
 
-<ul class="list-group list-group-unbordered">
+            <ul class="list-group list-group-unbordered">
 
-<li class="list-group-item">
-<b>DNI</b>
-<span class="pull-right">
-<?= $data['numero_documento'] ?? '' ?>
-</span>
-</li>
+              <li class="list-group-item">
+                <b>DNI</b>
+                <span class="pull-right">
+                  <?= $data['numero_documento'] ?? '' ?>
+                </span>
+              </li>
 
-<li class="list-group-item">
-<b>Edad</b>
-<span class="pull-right">
-<?= $edad ?>
-</span>
-</li>
+              <li class="list-group-item">
+                <b>Edad</b>
+                <span class="pull-right">
+                  <?= $edad ?>
+                </span>
+              </li>
 
-<li class="list-group-item">
-<b>Hora de atención</b>
-<span class="pull-right">
-<?= date('h:i A') ?>
-</span>
-</li>
+              <li class="list-group-item">
+                <b>Hora de atención</b>
+                <span class="pull-right">
+                  <?= date('h:i A') ?>
+                </span>
+              </li>
 
-<li class="list-group-item">
-<b>Área</b>
-<span class="pull-right">Psicología</span>
-</li>
+              <li class="list-group-item">
+                <b>Área</b>
+                <span class="pull-right">Psicología</span>
+              </li>
 
-</ul>
+            </ul>
 
-</div>
-</div>
+          </div>
+        </div>
 
-</div>
-</div>
+      </div>
+    </div>
 
     <!-- ================= ALERTA ================= -->
 
@@ -189,18 +190,20 @@ if (!empty($data['pac_fecnac'])) {
 </div>
 
 <style>
-.examen-card {
-  border-radius: 15px;
-  transition: 0.3s;
-}
-.examen-card:hover {
-  transform: scale(1.02);
-  box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
-}
-.icono-examen i {
-  font-size: 45px;
-  color: #00a7d0;
-}
+  .examen-card {
+    border-radius: 15px;
+    transition: 0.3s;
+  }
+
+  .examen-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .icono-examen i {
+    font-size: 45px;
+    color: #00a7d0;
+  }
 </style>
 
 <?php require APP_PATH . '/views/layouts/app_footer.php'; ?>
