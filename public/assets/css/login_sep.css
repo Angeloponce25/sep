@@ -4,16 +4,7 @@ body.lockscreen {
   background-size: cover;
 }
 
-/* Capa para mejorar lectura */
-body.lockscreen::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 40, 80, 0.45);
-}
+
 
 /* Contenedor */
 .lockscreen-wrapper {
