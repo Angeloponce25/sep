@@ -1,4 +1,6 @@
-
+body.lockscreen {
+  background: #f0f2f5;
+}
 
 /* LOGIN MODERNO ADMIN LTE */
 .modern-login {
@@ -11,7 +13,6 @@ body.lockscreen {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url('<?= BASE_URL ?>/img/fondo_clinica.jpeg');
 }
 
 /* Contenedor principal */
