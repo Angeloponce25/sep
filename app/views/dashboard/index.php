@@ -5,14 +5,14 @@
 <?php
 
 $nombreCompleto = ($data['pac_nombres'] ?? '') . ' ' .
-                  ($data['pac_primera_ape'] ?? '') . ' ' .
+                  ($data['pac_primer_ape'] ?? '') . ' ' .
                   ($data['pac_segundo_ape'] ?? '');
 
 $edad = '';
 
-if (!empty($data['pac_fecnasc'])) {
+if (!empty($data['pac_fecnac'])) {
     $edad = date_diff(
-        date_create($data['pac_fecnasc']),
+        date_create($data['pac_fecnac']),
         date_create('today')
     )->y . ' años';
 }
