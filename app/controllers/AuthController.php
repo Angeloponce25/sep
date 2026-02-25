@@ -21,8 +21,14 @@ class AuthController {
         $user = $userModel->findByUsername($username);
 
         if ($user) {
+            
+            $_SESSION['user'] = [
+                                    'id_paciente' => $user['id_paciente'],
+                                    'nombre' => $user['pac_nombres'],
+                                    'dni' => $user['numero_documento']
+                                ];
 
-            $_SESSION['user'] = $user['numero_documento'];
+                                
             $_SESSION['login_time'] = time();
 
             echo "success";
