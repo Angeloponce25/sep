@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="<?= BASE_URL ?>/assets/adminLTE/bower_components/fullcalendar/dist/fullcalendar.min.css">
   <link rel="stylesheet" href="<?= BASE_URL ?>/assets/adminLTE/bower_components/fullcalendar/dist/fullcalendar.print.min.css" media="print">
   <!-- Estilo de Login Luis Bernedo -->
-  <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/login-sep.css">
+  <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/login_sep.css">
    <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
