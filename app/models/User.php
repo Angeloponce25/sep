@@ -19,4 +19,15 @@ class User {
 
         return $result->fetch_assoc(); // devuelve un solo usuario
     }
+
+    public function getPacienteById($id)
+    {
+        $id = (int)$id;
+
+        $sql = "SELECT * FROM paciente WHERE id_paciente = $id LIMIT 1";
+
+        $result = $this->db->query($sql);
+
+        return $result->fetch_assoc();
+    }
 }
