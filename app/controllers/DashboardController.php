@@ -4,6 +4,9 @@ require_once '../app/models/User.php';
 
 class DashboardController extends Controller {
 
+
+    private $userModel;
+    
     public function __construct() {
         session_start();
 
@@ -16,13 +19,12 @@ class DashboardController extends Controller {
     public function index()
     {       
 
-        $userModel = new User();
-
-        $paciente = $userModel->getPacienteById($_SESSION['user']['id_paciente']);
+        $id = $_SESSION['user']['id_paciente'] ?? null;        
+        $paciente = $this->userModel->getPacienteById($id);
 
         $this->view('dashboard/index', [
             'title' => 'Dashboard',
-            'paciente' => $paciente
+            'data' => $paciente
         ]);
     }
 }

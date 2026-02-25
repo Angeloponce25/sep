@@ -3,8 +3,9 @@
 <?php require APP_PATH . '/views/layouts/sidebar.php'; ?>
 
 <?php
+var_dump($data);
 $nombreCompleto = ($data['pac_nombres'] ?? '') . ' ' .
-                  ($data['pac_primer_ape'] ?? '') . ' ' .
+                  ($data['pac_primera_ape'] ?? '') . ' ' .
                   ($data['pac_segundo_ape'] ?? '');
 
 /*$edad = '';
@@ -32,7 +33,7 @@ if (!empty($paciente['pac_fecnasc'])) {
                  src="<?= BASE_URL ?>/img/user.png">
 
             <h3 class="profile-username text-center">
-              <?= $data[0] ['pac_nombres'] ?> <?= $data[0] ['pac_primer_ape'] ?> <?= $data[0] ['pac_segundo_ape'] ?>
+              <?= trim($nombreCompleto) ?>
             </h3>
 
             <p class="text-muted text-center">
