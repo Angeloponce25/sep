@@ -32,7 +32,7 @@ if (!empty($paciente['pac_fecnac'])) {
               src="<?= BASE_URL ?>/img/user.png">
 
             <h3 class="profile-username text-center">
-              <?= $paciente['pac_nombres'] ?>
+              <?= $nombreCompleto ?>
             </h3>
 
             <p class="text-muted text-center">Paciente</p>
