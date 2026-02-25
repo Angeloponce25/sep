@@ -55,6 +55,7 @@ body.lockscreen {
 }
 .input-group-append{
   display: flex;
+  align-items: center;
 }
 /* INPUT */
 .input-modern input {
