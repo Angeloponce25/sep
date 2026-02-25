@@ -11,12 +11,12 @@ class User {
     }
 
     // ✅ Método que el AuthController está esperando
-    public function findByUsername($username) {
+    /*public function findByUsername($username) {
         $username = $this->db->getConnection()->real_escape_string($username);
 
         $sql = "SELECT * FROM paciente WHERE numero_documento = '$username' LIMIT 1";
         $result = $this->db->query($sql);
 
         return $result->fetch_assoc(); // devuelve un solo usuario
-    }
+    }*/
 }
