@@ -3,10 +3,8 @@
 class AuthController {
 
     public function login() {
-        $data['title'] = 'Loginws';
-        require_once APP_PATH . '/views/auth/auth_header.php';
-        require_once APP_PATH . '/views/auth/login.php';
-        require_once APP_PATH . '/views/auth/auth_footer.php';
+        $data['title'] = 'Login';
+        echo 'hola';
     }
 
     public function doLogin() {
