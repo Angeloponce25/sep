@@ -1,7 +1,6 @@
 /* LOGIN MODERNO ADMIN LTE */
 .modern-login {
   width: 900px;
-  height: 900px;
 }
 
 /* Tarjeta principal */
@@ -11,6 +10,7 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  width: 900px;
 }
 
 /* LADO IZQUIERDO */
