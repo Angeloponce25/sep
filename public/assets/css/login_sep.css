@@ -39,10 +39,6 @@ body.lockscreen {
   width: 70%;
   object-fit: contain;
   background: transparent;
-  
-}
-.remove-bg img{
-    filter: brightness(1);
 }
 
 /* LADO DERECHO */
@@ -57,7 +53,9 @@ body.lockscreen {
   width: 80px;
   margin: 15px 0;
 }
-
+.input-group-append{
+  display: flex;
+}
 /* INPUT */
 .input-modern input {
   border-radius: 20px;
