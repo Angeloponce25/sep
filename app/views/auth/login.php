@@ -15,7 +15,7 @@
 
     <!-- Imagen del sistema -->
     <div class="lockscreen-image">
-      <img src="<?= BASE_URL ?>/img/psicologia.png" alt="Centro Médico Divino Niño">
+      <img src="<?= BASE_URL ?>/img/logoclinica.png" alt="Centro Médico Divino Niño">
     </div>
 
     <!-- Formulario -->
