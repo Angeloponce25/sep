@@ -12,9 +12,9 @@ error_reporting(E_ALL);
 ============================== */
 
 /*define('BASE_URL', 'http://midominio.com/');*/
-define('BASE_URL', 'http://localhost/sep/public');
+define('BASE_URL', 'http://localhost:8088/sep/public');
 define('APP_PATH', dirname(__DIR__));
-define('PUBLIC_PATH', dirname(__DIR__) . '/public');
+define('PUBLIC_PATH', $_SERVER['DOCUMENT_ROOT']);
 
 /* ==============================
    BASE DE DATOS
