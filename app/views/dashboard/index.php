@@ -5,17 +5,17 @@
 <?php
 var_dump($data);
 $nombreCompleto = ($data['pac_nombres'] ?? '') . ' ' .
-                  ($data['pac_primera_ape'] ?? '') . ' ' .
+                  ($data['pac_primer_ape'] ?? '') . ' ' .
                   ($data['pac_segundo_ape'] ?? '');
 
-$edad = '';
+/*$edad = '';
 
 if (!empty($paciente['pac_fecnasc'])) {
     $edad = date_diff(
         date_create($paciente['pac_fecnasc']),
         date_create('today')
     )->y . ' años';
-}
+}*/
 ?>
 
 <div class="content-wrapper">
