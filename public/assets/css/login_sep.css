@@ -60,8 +60,6 @@ body.lockscreen {
 }
 .input-group-append{
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /* TITULOS */
