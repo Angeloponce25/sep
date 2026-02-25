@@ -25,7 +25,7 @@ class AuthController {
             $_SESSION['user'] = [
                                     'id_paciente' => $user['id_paciente'],
                                     'nombre' => $user['pac_nombres'],
-                                    'dni' => $user['numero_documento']
+                                    'numero_documento' => $user['numero_documento']
                                 ];
 
                                 

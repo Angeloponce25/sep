@@ -26,7 +26,7 @@
           <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?= BASE_URL ?>/img/user.png" class="user-image" alt="User Image">
-              <span class="hidden-xs"><?= $_SESSION['user']['numero_documento'] ?></span>
+              <span class="hidden-xs"><?= $_SESSION['user']['dni'] ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- Menu Footer-->
