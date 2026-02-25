@@ -1,81 +1,155 @@
+/* Fondo global (full-screen, como ya lo teníamos) */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* evita scroll innecesario en lockscreen */
+}
+
 body.lockscreen {
   background-image: url("../../img/background2.png");
   background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  min-height: 100vh;
 }
 
-/* LOGIN MODERNO ADMIN LTE */
-.modern-login {
-  width: 900px;
-}
-
-/* CENTRAR TODO EL LOGIN EN LA PANTALLA */
-body.lockscreen {
+/* Contenedor principal (flex para dividir izquierda-derecha) */
+.login-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
+  width: 100vw;
 }
 
-/* Contenedor principal */
-.lockscreen-wrapper {
-  width: 900px;
-  max-width: 95%;
-}
-
-/* Tarjeta principal */
-.login-card {
-  display: flex;
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-/* LADO IZQUIERDO */
+/* LADO IZQUIERDO - con overlay semi-transparente si quieres glass también aquí */
 .login-left {
   width: 50%;
-  background: linear-gradient(135deg,#0548ff,#00a8ff);
+  background: linear-gradient(135deg, rgba(5, 72, 255, 0.4), rgba(0, 168, 255, 0.4)); /* gradiente más suave y transparente */
+  backdrop-filter: blur(8px);          /* efecto vidrio principal */
+  -webkit-backdrop-filter: blur(8px);  /* soporte Safari */
   display: flex;
   align-items: center;
   justify-content: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.15); /* borde sutil */
 }
 
 .login-left img {
   width: 70%;
+  max-width: 500px;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.4)); /* sombra para resaltar */
+  opacity: 0.95; /* sutil transparencia en la imagen */
 }
 
-
-/* LADO DERECHO */
+/* LADO DERECHO - glassmorphism completo (transparente + blur) */
 .login-right {
   width: 50%;
-  padding: 40px;
+  padding: 50px 40px;
   text-align: center;
+  background: rgba(255, 255, 255, 0.12);   /* vidrio semi-transparente blanco */
+  backdrop-filter: blur(16px);             /* blur fuerte para efecto vidrio */
+  -webkit-backdrop-filter: blur(16px);
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25); /* sombra suave */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* LOGO */
+.logo-center {
+  margin: 0 auto 35px;
+}
+
 .logo-center img {
-  width: 80px;
-  margin: 15px 0;
+  width: 100px;           /* un poco más grande */
+  height: auto;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
 }
 
-/* INPUT */
+/* INPUT - también con glassmorphism */
+.input-modern {
+  position: relative;
+  margin: 25px 0;
+}
+
 .input-modern input {
-  border-radius: 20px;
-  padding: 10px;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 9999px;          /* pastilla muy moderna */
+  color: white;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
 }
-.input-group-append{
+
+.input-modern input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.input-modern input:focus {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.15);
+  outline: none;
+}
+
+/* Botón (input-group-append) - hazlo también glassy */
+.input-group-append {
   display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
-/* TITULOS */
+.input-group-append .btn {
+  background: linear-gradient(135deg, #00a8ff, #0548ff);
+  border: none;
+  color: white;
+  padding: 14px 40px;
+  border-radius: 9999px;
+  font-size: 1.1rem;
+  box-shadow: 0 6px 20px rgba(5, 72, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.input-group-append .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(5, 72, 255, 0.5);
+}
+
+/* TÍTULOS */
 .lockscreen-name {
-  font-weight: bold;
-  margin-bottom: 10px; 
+  font-size: 2.2rem;          /* grande y visible */
+  font-weight: 700;
+  color: white;
+  margin-bottom: 25px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-.help-block{
-  font-size: 1.5rem;
-  color: #666;
+/* Mensaje inferior */
+.help-block {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 30px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .login-container {
+    flex-direction: column;
+  }
+  .login-left, .login-right {
+    width: 100%;
+    height: 50vh;
+  }
+  .login-right {
+    height: auto;
+    min-height: 50vh;
+  }
 }
