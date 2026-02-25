@@ -29,7 +29,7 @@ body.lockscreen {
 
 /* Nombre del sistema */
 .lockscreen-name {
-  color: #f8f9fa;
+  color: #000000;
   font-size: 18px;
 }
 
