@@ -39,16 +39,22 @@
   </div>
 </div>
 
-
 <?php
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-$conn = new mysqli(
-    "192.168.1.151",
-    "webmaster",
-    "super",
-    "gperu_cmdn",
-    3306
-);
+$servidor = "192.168.1.151";
+$usuario = 'webmaster';
+$contrasena = 'super';
+$base_de_datos = "gperu_cmdn";
 
-echo "CONECTÓ OK";
+// Crear la conexión utilizando mysqli
+$conexion = new mysqli($servidor, $usuario, $contrasena, $base_de_datos);
+
+// Verificar la conexión
+if ($conexion->connect_error) {
+    die("La conexión ha fallado: " . $coni->connect_error);
+}
+
+// Establecer el conjunto de caracteres
+$conexion->set_charset("utf8");
+
+?>
