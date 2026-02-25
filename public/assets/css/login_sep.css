@@ -37,8 +37,12 @@ body.lockscreen {
 
 .login-left img {
   width: 70%;
-  background: transparent;
   object-fit: contain;
+  background: transparent;
+  
+}
+.remove-bg img{
+    filter: brightness(1);
 }
 
 /* LADO DERECHO */
