@@ -1,6 +1,6 @@
 <div class="lockscreen-wrapper">
     <div class="lockscreen-logo">
-        <a href="../../index2.html"><b>Admin</b>LTE</a>
+        <a href="../../index2.html"><b>Sistema de Evaluacion Psicologica</b>LTE</a>
     </div>
     <!-- User name -->
     <div class="lockscreen-name">Luis Bernedo Prueba</div>
@@ -34,8 +34,10 @@
     <div class="text-center">
         <a href="login.html">Or sign in as a different user</a>
     </div>
+    <!-- Footer -->
     <div class="lockscreen-footer text-center">
-        Copyright &copy; 2014-2015 <b><a href="http://almsaeedstudio.com" class="text-black">Almsaeed Studio</a></b><br>
-        All rights reserved
-    </div>
+    <strong>Centro Médico Divino Niño</strong><br>
+    Sistema SEP - Evaluación Psicológica<br>
+    © <?= date("Y") ?> Todos los derechos reservados
+  </div>
 </div>
