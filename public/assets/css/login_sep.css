@@ -106,3 +106,14 @@ body.lockscreen {
   color: #666;
   margin-top: 20px;
 }
+
+/*Mensaje de Soporte*/
+.soporte-login {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #666;
+}
+
+.soporte-login strong {
+  color: #25D366;
+}
