@@ -258,5 +258,8 @@ body.lockscreen {
   .soporte-login .telefono {
     color: #ffffff;
   }
+  .soporte-login i{
+    color: #ffffff;
+  }
 
 }
