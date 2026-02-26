@@ -1,15 +1,15 @@
 /* ================================
-   TIPOGRAFIA Y PALETA DE COLORES
+   TIPOGRAFIA Y COLORES MEDICOS
 ================================ */
 :root {
-  --color-primario: #1f8ef1;
-  --color-secundario: #1f3c88;
-  --color-exito: #2ecc71;
-  --color-fondo: #f4f6f9;
-  --color-input: #f8f9fb;
-  --color-borde: #e4e6ef;
-  --color-texto: #495057;
-  --color-blanco: #ffffff;
+  --azul-medico: #2b7de9;
+  --azul-oscuro: #1e3a8a;
+  --verde-salud: #20c997;
+  --verde-hover: #17a589;
+  --fondo-claro: #f5f9ff;
+  --borde-input: #dce3ec;
+  --texto-gris: #6c757d;
+  --blanco: #ffffff;
 
   --fuente-principal: 'Inter', sans-serif;
   --fuente-titulo: 'Poppins', sans-serif;
@@ -25,7 +25,6 @@ body.lockscreen {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
 
   display: flex;
   justify-content: center;
@@ -34,59 +33,47 @@ body.lockscreen {
 }
 
 /* ================================
-   CONTENEDOR PRINCIPAL
-================================ */
-.modern-login {
-  width: 950px;
-  max-width: 95%;
-}
-
-.lockscreen-wrapper {
-  width: 950px;
-  max-width: 95%;
-}
-
-/* ================================
    TARJETA PRINCIPAL
 ================================ */
 .login-card {
   display: flex;
-  background: var(--color-blanco);
-  border-radius: 16px;
+  background: var(--blanco);
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.12);
 }
 
 /* ================================
-   LADO IZQUIERDO
+   LADO IZQUIERDO CON IMAGEN
 ================================ */
 .login-left {
   width: 50%;
   position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
-  overflow: hidden;
+  align-items: flex-end; /* BAJA LA IMAGEN */
+  padding-bottom: 40px; /* separación inferior */
 }
 
-/* FONDO CON DEGRADADO */
+/* FONDO MEDICO */
 .login-left::before {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(rgba(31,60,136,0.6), rgba(31,142,241,0.6)),
+    linear-gradient(rgba(43,125,233,0.75), rgba(32,201,151,0.55)),
     url("../../img/fondo_clinica.jpeg");
   background-size: cover;
   background-position: center;
 }
 
-/* LOGO IZQUIERDO */
+/* IMAGEN DEL LADO IZQUIERDO */
 .login-left img {
-  width: 85%;
+  width: 80%;
   position: relative;
   z-index: 2;
-  filter: drop-shadow(0px 5px 15px rgba(0,0,0,0.3));
+  margin-top: 40px; /* BAJA UN POCO MÁS */
+  filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.25));
 }
 
 /* ================================
@@ -94,7 +81,7 @@ body.lockscreen {
 ================================ */
 .login-right {
   width: 50%;
-  padding: 60px 55px;
+  padding: 65px 55px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -102,28 +89,26 @@ body.lockscreen {
 }
 
 /* ================================
-   TITULOS
+   TITULO CENTRO MEDICO
 ================================ */
 .lockscreen-logo a {
   font-family: var(--fuente-titulo);
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 700;
-  color: var(--color-secundario);
+  color: var(--azul-oscuro);
 }
 
+/* NOMBRE DEL SISTEMA */
 .lockscreen-name {
   font-size: 16px;
-  color: var(--color-texto);
+  color: var(--texto-gris);
   margin-bottom: 25px;
 }
 
-/* ================================
-   LOGO CENTRAL
-================================ */
+/* LOGO CENTRAL */
 .logo-center img {
-  width: 110px;
-  margin: 10px auto 25px auto;
-  display: block;
+  width: 105px;
+  margin-bottom: 25px;
 }
 
 /* ================================
@@ -131,34 +116,31 @@ body.lockscreen {
 ================================ */
 .input-modern {
   display: flex;
-  align-items: center;
   margin-bottom: 15px;
 }
 
 .input-modern input {
   border-radius: 30px 0 0 30px;
   height: 52px;
-  border: 1px solid var(--color-borde);
+  border: 1px solid var(--borde-input);
   padding-left: 18px;
   font-size: 15px;
-  background: var(--color-input);
-  transition: all 0.2s ease;
+  background: #f8fbff;
+  transition: 0.3s;
 }
 
 .input-modern input:focus {
-  background: var(--color-blanco);
-  border-color: var(--color-primario);
-  box-shadow: 0 0 0 3px rgba(31,142,241,0.15);
+  border-color: var(--azul-medico);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(43,125,233,0.15);
 }
 
-/* ================================
-   BOTON LOGIN
-================================ */
+/* BOTON */
 .input-modern .btn {
   border-radius: 0 30px 30px 0;
   height: 52px;
   padding: 0 22px;
-  background: var(--color-exito);
+  background: var(--verde-salud);
   border: none;
   color: white;
   font-weight: 600;
@@ -166,16 +148,13 @@ body.lockscreen {
 }
 
 .input-modern .btn:hover {
-  background: #27ae60;
-  transform: scale(1.03);
+  background: var(--verde-hover);
 }
 
-/* ================================
-   MENSAJE
-================================ */
+/* MENSAJE */
 .help-block {
   font-size: 14px;
-  color: var(--color-texto);
+  color: var(--texto-gris);
   margin-top: 18px;
 }
 
@@ -183,26 +162,29 @@ body.lockscreen {
    SOPORTE
 ================================ */
 .soporte-login {
-  margin-top: 15px;
+  margin-top: 18px;
   font-size: 14px;
-  color: #666;
+  color: #555;
 }
 
 .soporte-login i {
   margin-right: 6px;
-  color: var(--color-primario);
+  color: var(--azul-medico);
 }
 
 .soporte-login .telefono {
   font-size: 16px;
   font-weight: 600;
-  color: var(--color-exito);
+  color: var(--verde-salud);
 }
 
 /* ================================
-   EFECTO HOVER TARJETA
+   EFECTO PROFESIONAL
 ================================ */
+.login-card {
+  transition: 0.3s;
+}
+
 .login-card:hover {
-  transform: translateY(-4px);
-  transition: 0.3s ease;
+  transform: translateY(-5px);
 }
