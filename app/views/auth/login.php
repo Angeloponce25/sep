@@ -47,9 +47,20 @@
                 Acceso al sistema de evaluaciones psicológicas
             </div>
             <div class="soporte-login">
-                ¿No puede acceder al sistema?<br>
-                Contáctenos por WhatsApp o teléfono<br>
-                <strong>📞 959 123 456</strong>
+                <p>
+                    <i class="fas fa-exclamation-circle"></i>
+                    ¿No puede acceder al sistema?
+                </p>
+
+                <p>
+                    <i class="fab fa-whatsapp text-success"></i>
+                    Escríbanos por WhatsApp o llámenos
+                </p>
+
+                <p class="telefono">
+                    <i class="fas fa-phone-alt"></i>
+                    959 123 456
+                </p>
             </div>
 
         </div>

@@ -117,11 +117,17 @@ body.lockscreen {
 
 /*Mensaje de Soporte*/
 .soporte-login {
-  margin-top: 15px;
+  margin-top: 18px;
   font-size: 14px;
-  color: #666;
+  color: #555;
 }
 
-.soporte-login strong {
+.soporte-login i {
+  margin-right: 6px;
+}
+
+.soporte-login .telefono {
+  font-size: 16px;
+  font-weight: bold;
   color: #25D366;
 }
