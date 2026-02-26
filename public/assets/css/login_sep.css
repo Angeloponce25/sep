@@ -1,5 +1,26 @@
-/* FONDO GENERAL */
+/* ================================
+   TIPOGRAFIA Y PALETA DE COLORES
+================================ */
+:root {
+  --color-primario: #1f8ef1;
+  --color-secundario: #1f3c88;
+  --color-exito: #2ecc71;
+  --color-fondo: #f4f6f9;
+  --color-input: #f8f9fb;
+  --color-borde: #e4e6ef;
+  --color-texto: #495057;
+  --color-blanco: #ffffff;
+
+  --fuente-principal: 'Inter', sans-serif;
+  --fuente-titulo: 'Poppins', sans-serif;
+}
+
+/* ================================
+   FONDO GENERAL
+================================ */
 body.lockscreen {
+  font-family: var(--fuente-principal);
+
   background-image: url("../../img/background2.png");
   background-size: cover;
   background-position: center;
@@ -12,28 +33,33 @@ body.lockscreen {
   height: 100vh;
 }
 
-/* CONTENEDOR PRINCIPAL */
+/* ================================
+   CONTENEDOR PRINCIPAL
+================================ */
 .modern-login {
-  width: 900px;
+  width: 950px;
   max-width: 95%;
 }
 
-/* CONTENEDOR LOGIN */
 .lockscreen-wrapper {
-  width: 900px;
+  width: 950px;
   max-width: 95%;
 }
 
-/* TARJETA PRINCIPAL */
+/* ================================
+   TARJETA PRINCIPAL
+================================ */
 .login-card {
   display: flex;
-  background: white;
-  border-radius: 12px;
+  background: var(--color-blanco);
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
 
-/* LADO IZQUIERDO CON IMAGEN */
+/* ================================
+   LADO IZQUIERDO
+================================ */
 .login-left {
   width: 50%;
   position: relative;
@@ -43,34 +69,31 @@ body.lockscreen {
   overflow: hidden;
 }
 
-/* IMAGEN DE FONDO CON OPACIDAD */
+/* FONDO CON DEGRADADO */
 .login-left::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: 
-    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+  background:
+    linear-gradient(rgba(31,60,136,0.6), rgba(31,142,241,0.6)),
     url("../../img/fondo_clinica.jpeg");
   background-size: cover;
   background-position: center;
-  opacity: 0.5;
 }
 
-/* LOGO DEL LADO IZQUIERDO */
+/* LOGO IZQUIERDO */
 .login-left img {
-  width: 90%;
+  width: 85%;
   position: relative;
   z-index: 2;
+  filter: drop-shadow(0px 5px 15px rgba(0,0,0,0.3));
 }
 
-/* TIPOGRAFIA GENERAL */
-body {
-  font-family: 'Inter', sans-serif;
-}
-
-/* LADO DERECHO */
+/* ================================
+   LADO DERECHO
+================================ */
 .login-right {
-  width: 60%;
+  width: 50%;
   padding: 60px 55px;
   text-align: center;
   display: flex;
@@ -78,85 +101,108 @@ body {
   justify-content: center;
 }
 
-/* TITULO CENTRO MEDICO */
+/* ================================
+   TITULOS
+================================ */
 .lockscreen-logo a {
-  font-size: 26px;
+  font-family: var(--fuente-titulo);
+  font-size: 28px;
   font-weight: 700;
-  color: #1f3c88; /* azul médico */
+  color: var(--color-secundario);
 }
 
-/* NOMBRE DEL SISTEMA */
 .lockscreen-name {
   font-size: 16px;
-  color: #6c757d;
+  color: var(--color-texto);
   margin-bottom: 25px;
 }
 
-/* LOGO */
+/* ================================
+   LOGO CENTRAL
+================================ */
 .logo-center img {
-  width: 105px;
-  margin: 15px auto 25px auto;
+  width: 110px;
+  margin: 10px auto 25px auto;
   display: block;
 }
 
-/* INPUT */
+/* ================================
+   INPUT
+================================ */
 .input-modern {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .input-modern input {
   border-radius: 30px 0 0 30px;
   height: 52px;
-  border: 1px solid #e4e6ef;
+  border: 1px solid var(--color-borde);
   padding-left: 18px;
   font-size: 15px;
-  background: #f8f9fb;
+  background: var(--color-input);
   transition: all 0.2s ease;
 }
 
 .input-modern input:focus {
-  background: white;
-  border-color: #1f8ef1;
+  background: var(--color-blanco);
+  border-color: var(--color-primario);
   box-shadow: 0 0 0 3px rgba(31,142,241,0.15);
 }
 
-/* BOTON LOGIN */
+/* ================================
+   BOTON LOGIN
+================================ */
 .input-modern .btn {
   border-radius: 0 30px 30px 0;
   height: 52px;
   padding: 0 22px;
-  background: #2ecc71; /* verde salud */
+  background: var(--color-exito);
   border: none;
-  transition: 0.25s;
+  color: white;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
 .input-modern .btn:hover {
   background: #27ae60;
+  transform: scale(1.03);
 }
 
-/* MENSAJE */
+/* ================================
+   MENSAJE
+================================ */
 .help-block {
   font-size: 14px;
-  color: #6c757d;
+  color: var(--color-texto);
   margin-top: 18px;
 }
 
-/* SOPORTE */
+/* ================================
+   SOPORTE
+================================ */
 .soporte-login {
   margin-top: 15px;
   font-size: 14px;
-  color: #555;
+  color: #666;
 }
 
 .soporte-login i {
   margin-right: 6px;
-  color: #1f8ef1;
+  color: var(--color-primario);
 }
 
 .soporte-login .telefono {
   font-size: 16px;
   font-weight: 600;
-  color: #2ecc71;
+  color: var(--color-exito);
+}
+
+/* ================================
+   EFECTO HOVER TARJETA
+================================ */
+.login-card:hover {
+  transform: translateY(-4px);
+  transition: 0.3s ease;
 }
