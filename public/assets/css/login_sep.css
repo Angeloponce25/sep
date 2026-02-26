@@ -1,9 +1,15 @@
 /* ================================
+   TIPOGRAFÍA GENERAL
+================================ */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+
+/* ================================
    FONDO GENERAL
 ================================ */
 body.lockscreen {
-  font-family: 'Inter', sans-serif;
-
   background-image: url("../../img/background2.png");
   background-size: cover;
   background-position: center;
@@ -15,13 +21,19 @@ body.lockscreen {
   height: 100vh;
 }
 
-/* CONTENEDOR PRINCIPAL */
+
+/* ================================
+   CONTENEDOR PRINCIPAL
+================================ */
 .modern-login {
   width: 1100px;
   max-width: 95%;
 }
 
-/* TARJETA LOGIN */
+
+/* ================================
+   TARJETA LOGIN
+================================ */
 .login-card {
   display: flex;
   width: 100%;
@@ -32,6 +44,7 @@ body.lockscreen {
   box-shadow: 0 25px 60px rgba(0,0,0,0.15);
 }
 
+
 /* ================================
    LADO IZQUIERDO
 ================================ */
@@ -39,11 +52,11 @@ body.lockscreen {
   width: 45%;
   position: relative;
   display: flex;
-  align-items: center; /* centrado vertical */
+  align-items: center;
   justify-content: center;
 }
 
-/* FONDO CON OPACIDAD (PALETA MEDICA AZUL) */
+/* FONDO MEDICO */
 .login-left::before {
   content: "";
   position: absolute;
@@ -51,9 +64,9 @@ body.lockscreen {
   background:
     linear-gradient(
       135deg,
-      rgba(81,122,255,0.85),   /* #517aff */
-      rgba(32,178,255,0.75),   /* azul claro salud */
-      rgba(0,119,182,0.65)     /* azul clínico */
+      rgba(81,122,255,0.85),
+      rgba(32,178,255,0.75),
+      rgba(0,119,182,0.65)
     ),
     url("../../img/fondo_clinica.jpeg");
   background-size: cover;
@@ -65,8 +78,9 @@ body.lockscreen {
   width: 75%;
   position: relative;
   z-index: 2;
-  transform: translateY(40px); /* baja la imagen */
+  transform: translateY(40px);
 }
+
 
 /* ================================
    LADO DERECHO
@@ -80,12 +94,14 @@ body.lockscreen {
   justify-content: center;
 }
 
-/* TITULO */
+
+/* TITULO CENTRO MEDICO */
 .lockscreen-logo a {
   font-size: 28px;
   font-weight: 700;
   color: #517aff;
 }
+
 
 /* SUBTITULO */
 .lockscreen-name {
@@ -94,11 +110,13 @@ body.lockscreen {
   margin-bottom: 25px;
 }
 
+
 /* LOGO */
 .logo-center img {
   width: 110px;
   margin-bottom: 25px;
 }
+
 
 /* INPUT + BOTON */
 .input-modern {
@@ -124,12 +142,14 @@ body.lockscreen {
   border: none;
 }
 
+
 /* MENSAJE */
 .help-block {
   font-size: 14px;
   color: #6c757d;
   margin-top: 15px;
 }
+
 
 /* SOPORTE */
 .soporte-login {
@@ -144,10 +164,10 @@ body.lockscreen {
   color: #517aff;
 }
 
- 
+
 
 /* ===================================
-   RESPONSIVE TABLETS Y CELULARES
+   RESPONSIVE TABLETS
 =================================== */
 @media (max-width: 992px) {
 
@@ -173,6 +193,7 @@ body.lockscreen {
 }
 
 
+
 /* ===================================
    RESPONSIVE CELULARES
 =================================== */
@@ -191,12 +212,12 @@ body.lockscreen {
     box-shadow: none;
   }
 
-  /* ocultamos la ilustración */
+  /* ocultamos ilustración */
   .login-left {
     display: none;
   }
 
-  /* FORMULARIO PRINCIPAL */
+  /* FORMULARIO CON FONDO MEDICO */
   .login-right {
     width: 100%;
     min-height: 100vh;
@@ -216,9 +237,11 @@ body.lockscreen {
     background-size: cover;
     background-position: center;
     color: white;
+
+    backdrop-filter: blur(8px);
   }
 
-  /* TITULO */
+  /* TITULOS */
   .lockscreen-logo a {
     color: white;
     font-size: 22px;
@@ -227,7 +250,6 @@ body.lockscreen {
   .lockscreen-name {
     color: rgba(255,255,255,0.9);
     font-size: 15px;
-    margin-bottom: 20px;
   }
 
   /* LOGO */
@@ -235,11 +257,7 @@ body.lockscreen {
     width: 90px;
   }
 
-  /* INPUT + BOTON */
-  .input-modern {
-    width: 100%;
-  }
-
+  /* INPUT */
   .input-modern input {
     width: 100%;
     background: rgba(255,255,255,0.96);
@@ -251,27 +269,25 @@ body.lockscreen {
     background: #3f38f5;
   }
 
-  /* MENSAJE */
+  /* TEXTO */
   .help-block {
     color: rgba(255,255,255,0.95);
   }
 
-  /* SOPORTE */
   .soporte-login {
     color: rgba(255,255,255,0.95);
-    font-size: 14px;
   }
 
   .soporte-login .telefono {
     color: #ffffff;
-    font-weight: 600;
   }
 
 }
 
 
+
 /* ===================================
-   CELULARES MUY PEQUEÑOS
+   CELULARES PEQUEÑOS
 =================================== */
 @media (max-width: 420px) {
 
