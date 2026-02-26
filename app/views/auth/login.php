@@ -5,7 +5,7 @@
 
         <!-- Lado izquierdo -->
         <div class="login-left">
-            <img src="<?= BASE_URL ?>/img/psicologa-Photoroom.png" alt="Sistema">
+            <img src="<?= BASE_URL ?>/img/psicologa01.png" alt="Sistema">
         </div>
 
         <!-- Lado derecho -->
