@@ -191,7 +191,25 @@ body.lockscreen {
   }
 
 }
+/* ===================================
+   SOLO TABLETS (768px a 992px)
+   OCULTAR IMAGEN DOCTOR
+=================================== */
+@media (min-width: 768px) and (max-width: 992px) {
 
+  .login-left {
+    display: none;
+  }
+
+  .login-card {
+    flex-direction: column;
+  }
+
+  .login-right {
+    width: 100%;
+  }
+
+}
 
 
 /* ===================================
