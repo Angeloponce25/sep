@@ -23,7 +23,7 @@
 
             <!-- Logo -->
             <div class="logo-center">
-                <img src="https://cmdnmollendo.com/wp-content/uploads/2024/11/divino-nino-imagen-logo.jpg" alt="Logo CMDN">
+                <img src="https://cmdnmollendo.com/wp-content/uploads/2025/07/logo-cmdn-footer.png" alt="Logo CMDN">
             </div>
 
             <!-- Formulario -->
