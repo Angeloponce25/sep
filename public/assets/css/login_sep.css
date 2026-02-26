@@ -181,29 +181,34 @@ body.lockscreen {
 
 
 /* ===================================
-   RESPONSIVE CELULARES
+   RESPONSIVE CELULAR
 =================================== */
-@media (max-width: 768px) {
+@media (max-width: 576px) {
 
   body.lockscreen {
     padding: 0;
     height: 100vh;
   }
 
+  /* la tarjeta deja de ser blanca */
   .login-card {
     flex-direction: column;
     background: transparent;
     box-shadow: none;
   }
 
+  /* ocultamos el lado izquierdo */
   .login-left {
     display: none;
   }
 
+  /* FORMULARIO CON FONDO MEDICO */
   .login-right {
     width: 100%;
     min-height: 100vh;
     padding: 40px 25px;
+    justify-content: center;
+    border-radius: 0;
 
     background:
       linear-gradient(
@@ -218,8 +223,6 @@ body.lockscreen {
     background-position: center;
     color: white;
   }
-
-}
 
   /* TITULOS EN BLANCO */
   .lockscreen-logo a {
@@ -259,3 +262,4 @@ body.lockscreen {
     color: #ffffff;
   }
 
+}
