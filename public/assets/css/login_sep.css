@@ -63,64 +63,90 @@ body.lockscreen {
   z-index: 2;
 }
 
-/* LADO DERECHO MÁS GRANDE */
+/* LADO DERECHO MÁS MODERNO */
 .login-right {
   width: 60%;
-  padding: 55px 50px;
+  padding: 60px 55px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* LOGO DEL CENTRO */
+/* TITULO CENTRO MEDICO */
+.lockscreen-logo a {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+/* NOMBRE DEL SISTEMA */
+.lockscreen-name {
+  font-size: 17px;
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+
+/* LOGO */
 .logo-center img {
-  width: 100px;
-  margin: 15px 0;
+  width: 110px;
+  margin: 20px auto;
+  display: block;
+  transition: transform 0.3s ease;
 }
 
-/* INPUT */
-/* INPUT Y BOTON ALINEADOS */
+.logo-center img:hover {
+  transform: scale(1.05);
+}
+
+/* INPUT MODERNO */
 .input-modern {
   display: flex;
   align-items: center;
+  margin-top: 15px;
 }
 
 .input-modern input {
   border-radius: 30px 0 0 30px;
-  height: 50px;
-  border: 1px solid #ddd;
-  padding-left: 15px;
+  height: 52px;
+  border: 1px solid #dcdcdc;
+  padding-left: 18px;
+  font-size: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
+.input-modern input:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 6px rgba(40,167,69,0.3);
+}
+
+/* BOTON LOGIN */
 .input-modern .btn {
   border-radius: 0 30px 30px 0;
-  height: 50px;
-  padding: 0 18px;
+  height: 52px;
+  padding: 0 20px;
+  background: #28a745;
+  border: none;
+  transition: 0.3s;
 }
 
-/* TITULOS */
-.lockscreen-logo a {
-  font-size: 26px;
-  font-weight: bold;
-}
-
-.lockscreen-name {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
+.input-modern .btn:hover {
+  background: #218838;
+  transform: scale(1.05);
 }
 
 /* MENSAJE */
 .help-block {
-  font-size: 16px;
+  font-size: 15px;
   color: #666;
-  margin-top: 20px;
+  margin-top: 22px;
 }
 
-/*Mensaje de Soporte*/
+/* SOPORTE */
 .soporte-login {
-  margin-top: 18px;
+  margin-top: 20px;
   font-size: 14px;
   color: #555;
-  text-align: center;
 }
 
 .soporte-login i {
