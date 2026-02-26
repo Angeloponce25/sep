@@ -39,9 +39,8 @@ body.lockscreen {
   width: 45%;
   position: relative;
   display: flex;
-  align-items: flex-end;
+  align-items: center; /* centrado vertical */
   justify-content: center;
-  padding-bottom: 20px;
 }
 
 /* FONDO CON OPACIDAD */
@@ -58,10 +57,10 @@ body.lockscreen {
 
 /* IMAGEN DOCTOR */
 .login-left img {
-  width: 70%;
+  width: 75%;
   position: relative;
   z-index: 2;
-  margin-top: 70px;
+  transform: translateY(40px); /* baja la imagen */
 }
 
 /* ================================
