@@ -143,3 +143,95 @@ body.lockscreen {
   font-weight: bold;
   color: #517aff;
 }
+
+/* ================================
+   RESPONSIVE DESKTOP
+================================ */   
+
+/* ===================================
+   RESPONSIVE TABLET
+=================================== */
+@media (max-width: 992px) {
+
+  .login-card {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .login-left {
+    width: 100%;
+    height: 220px;
+  }
+
+  .login-left img {
+    width: 40%;
+    transform: translateY(20px);
+  }
+
+  .login-right {
+    width: 100%;
+    padding: 40px 30px;
+  }
+
+  .input-modern input {
+    width: 100%;
+  }
+
+}
+
+
+/* ===================================
+   RESPONSIVE CELULAR
+=================================== */
+@media (max-width: 576px) {
+
+  body.lockscreen {
+    padding: 15px;
+    height: auto;
+  }
+
+  .login-card {
+    border-radius: 15px;
+  }
+
+  /* ocultar lado izquierdo en celular */
+  .login-left {
+    display: none;
+  }
+
+  .login-right {
+    width: 100%;
+    padding: 35px 20px;
+  }
+
+  .lockscreen-logo a {
+    font-size: 22px;
+  }
+
+  .lockscreen-name {
+    font-size: 14px;
+  }
+
+  .logo-center img {
+    width: 80px;
+  }
+
+  .input-modern {
+    flex-direction: row;
+  }
+
+  .input-modern input {
+    width: 100%;
+    height: 45px;
+  }
+
+  .input-modern .btn {
+    height: 45px;
+    padding: 0 16px;
+  }
+
+  .soporte-login {
+    font-size: 13px;
+  }
+
+}
