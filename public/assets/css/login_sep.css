@@ -186,52 +186,77 @@ body.lockscreen {
 @media (max-width: 576px) {
 
   body.lockscreen {
-    padding: 15px;
-    height: auto;
+    padding: 0;
+    height: 100vh;
   }
 
+  /* la tarjeta deja de ser blanca */
   .login-card {
-    border-radius: 15px;
+    flex-direction: column;
+    background: transparent;
+    box-shadow: none;
   }
 
-  /* ocultar lado izquierdo en celular */
+  /* ocultamos el lado izquierdo */
   .login-left {
     display: none;
   }
 
+  /* FORMULARIO CON FONDO MEDICO */
   .login-right {
     width: 100%;
-    padding: 35px 20px;
+    min-height: 100vh;
+    padding: 40px 25px;
+    justify-content: center;
+    border-radius: 0;
+
+    background:
+      linear-gradient(
+        135deg,
+        rgba(81,122,255,0.90),
+        rgba(32,178,255,0.85),
+        rgba(0,119,182,0.80)
+      ),
+      url("../../img/fondo_clinica.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    color: white;
   }
 
+  /* TITULOS EN BLANCO */
   .lockscreen-logo a {
+    color: white;
     font-size: 22px;
   }
 
   .lockscreen-name {
+    color: rgba(255,255,255,0.85);
     font-size: 14px;
   }
 
-  .logo-center img {
-    width: 80px;
-  }
-
-  .input-modern {
-    flex-direction: row;
-  }
-
+  /* INPUT */
   .input-modern input {
     width: 100%;
-    height: 45px;
+    background: rgba(255,255,255,0.95);
   }
 
+  /* BOTON */
   .input-modern .btn {
-    height: 45px;
-    padding: 0 16px;
+    background: #0fd186;
+  }
+
+  /* TEXTO */
+  .help-block {
+    color: rgba(255,255,255,0.9);
   }
 
   .soporte-login {
-    font-size: 13px;
+    color: rgba(255,255,255,0.9);
+  }
+
+  .soporte-login .telefono {
+    color: #ffffff;
   }
 
 }
