@@ -35,7 +35,7 @@ body.lockscreen {
 
 /* LADO IZQUIERDO CON IMAGEN */
 .login-left {
-  width: 80%;
+  width: 50%;
   position: relative;
   display: flex;
   align-items: center;
