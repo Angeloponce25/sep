@@ -52,8 +52,9 @@ body.lockscreen {
   width: 45%;
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-end; /* pega al fondo */
   justify-content: center;
+  overflow: hidden;
 }
 
 /* FONDO MEDICO */
@@ -78,9 +79,8 @@ body.lockscreen {
   width: 75%;
   position: relative;
   z-index: 2;
-  transform: translateY(40px);
+  margin-bottom: 0;
 }
-
 
 /* ================================
    LADO DERECHO
