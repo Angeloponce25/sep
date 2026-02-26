@@ -144,78 +144,72 @@ body.lockscreen {
   color: #517aff;
 }
 
-/* ================================
-   RESPONSIVE DESKTOP
-================================ */   
+ 
 
 /* ===================================
-   RESPONSIVE TABLET
+   RESPONSIVE TABLETS Y CELULARES
 =================================== */
 @media (max-width: 992px) {
 
   .login-card {
     flex-direction: column;
-    min-height: auto;
   }
 
   .login-left {
     width: 100%;
-    height: 220px;
+    height: 240px;
   }
 
   .login-left img {
-    width: 40%;
+    width: 45%;
     transform: translateY(20px);
   }
 
   .login-right {
     width: 100%;
-    padding: 40px 30px;
-  }
-
-  .input-modern input {
-    width: 100%;
+    padding: 40px 35px;
   }
 
 }
 
 
 /* ===================================
-   RESPONSIVE CELULAR
+   RESPONSIVE CELULARES
 =================================== */
 @media (max-width: 768px) {
 
   body.lockscreen {
     padding: 0;
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
   }
 
-  /* la tarjeta deja de ser blanca */
+  /* tarjeta transparente */
   .login-card {
     flex-direction: column;
     background: transparent;
     box-shadow: none;
   }
 
-  /* ocultamos el lado izquierdo */
+  /* ocultamos la ilustración */
   .login-left {
     display: none;
   }
 
-  /* FORMULARIO CON FONDO MEDICO */
+  /* FORMULARIO PRINCIPAL */
   .login-right {
     width: 100%;
     min-height: 100vh;
-    padding: 40px 25px;
+    padding: 45px 25px;
     justify-content: center;
     border-radius: 0;
 
     background:
       linear-gradient(
         135deg,
-        rgba(81,122,255,0.90),
-        rgba(32,178,255,0.85),
-        rgba(0,119,182,0.80)
+        rgba(81,122,255,0.92),
+        rgba(32,178,255,0.88),
+        rgba(0,119,182,0.85)
       ),
       url("../../img/fondo_clinica.jpeg");
 
@@ -224,42 +218,77 @@ body.lockscreen {
     color: white;
   }
 
-  /* TITULOS EN BLANCO */
+  /* TITULO */
   .lockscreen-logo a {
     color: white;
     font-size: 22px;
   }
 
   .lockscreen-name {
-    color: rgba(255,255,255,0.85);
-    font-size: 14px;
+    color: rgba(255,255,255,0.9);
+    font-size: 15px;
+    margin-bottom: 20px;
   }
 
-  /* INPUT */
+  /* LOGO */
+  .logo-center img {
+    width: 90px;
+  }
+
+  /* INPUT + BOTON */
+  .input-modern {
+    width: 100%;
+  }
+
   .input-modern input {
     width: 100%;
-    background: rgba(255,255,255,0.95);
+    background: rgba(255,255,255,0.96);
+    height: 52px;
   }
 
-  /* BOTON */
   .input-modern .btn {
+    height: 52px;
     background: #3f38f5;
   }
 
-  /* TEXTO */
+  /* MENSAJE */
   .help-block {
-    color: rgba(255,255,255,0.9);
+    color: rgba(255,255,255,0.95);
   }
 
+  /* SOPORTE */
   .soporte-login {
-    color: rgba(255,255,255,0.9);
+    color: rgba(255,255,255,0.95);
+    font-size: 14px;
   }
 
   .soporte-login .telefono {
     color: #ffffff;
+    font-weight: 600;
   }
-  .soporte-login i{
-    color: #ffffff;
+
+}
+
+
+/* ===================================
+   CELULARES MUY PEQUEÑOS
+=================================== */
+@media (max-width: 420px) {
+
+  .login-right {
+    padding: 35px 20px;
+  }
+
+  .lockscreen-logo a {
+    font-size: 20px;
+  }
+
+  .lockscreen-name {
+    font-size: 13px;
+  }
+
+  .logo-center img {
+    width: 80px;
   }
 
 }
