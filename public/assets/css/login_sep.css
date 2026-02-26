@@ -58,14 +58,14 @@ body.lockscreen {
 
 /* LOGO DEL LADO IZQUIERDO */
 .login-left img {
-  width: 75%;
+  width: 90%;
   position: relative;
   z-index: 2;
 }
 
 /* LADO DERECHO MÁS GRANDE */
 .login-right {
-  width: 80%;
+  width: 60%;
   padding: 55px 50px;
   text-align: center;
 }
