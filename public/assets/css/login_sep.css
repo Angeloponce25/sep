@@ -50,7 +50,7 @@ body.lockscreen {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(rgba(33,115,200,0.7), rgba(0,180,150,0.6)),
+    linear-gradient(rgba(33,115,200,0.7), rgba(2, 141, 255, 0.6)),
     url("../../img/fondo_clinica.jpeg");
   background-size: cover;
   background-position: center;
