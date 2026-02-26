@@ -18,7 +18,7 @@
 
       <!-- Nombre sistema -->
       <div class="lockscreen-name">
-        SEP - Sistema de Evaluación Psicológica
+        SEP - Sistema de Evaluación Psicológica luis
       </div>
 
       <!-- Logo -->
