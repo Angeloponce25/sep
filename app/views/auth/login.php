@@ -48,17 +48,17 @@
             </div>
             <div class="soporte-login">
                 <p>
-                    <i class="fas fa-exclamation-circle"></i>
+                    <i class="fa fa-info-circle"></i>
                     ¿No puede acceder al sistema?
                 </p>
 
                 <p>
-                    <i class="fab fa-whatsapp text-success"></i>
+                    <i class="fa fa-whatsapp text-success"></i>
                     Escríbanos por WhatsApp o llámenos
                 </p>
 
                 <p class="telefono">
-                    <i class="fas fa-phone-alt"></i>
+                    <i class="fa fa-phone"></i>
                     959 123 456
                 </p>
             </div>
