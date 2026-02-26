@@ -183,7 +183,7 @@ body.lockscreen {
 /* ===================================
    RESPONSIVE CELULAR
 =================================== */
-@media (max-width: 576px) {
+@media (max-width: 768px){
 
   body.lockscreen {
     padding: 0;
