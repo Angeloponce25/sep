@@ -43,13 +43,18 @@ body.lockscreen {
   justify-content: center;
 }
 
-/* FONDO CON OPACIDAD */
+/* FONDO CON OPACIDAD (PALETA MEDICA AZUL) */
 .login-left::before {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(rgba(33,115,200,0.7), rgba(2, 141, 255, 0.6)),
+    linear-gradient(
+      135deg,
+      rgba(81,122,255,0.85),   /* #517aff */
+      rgba(32,178,255,0.75),   /* azul claro salud */
+      rgba(0,119,182,0.65)     /* azul clínico */
+    ),
     url("../../img/fondo_clinica.jpeg");
   background-size: cover;
   background-position: center;
