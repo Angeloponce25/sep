@@ -63,7 +63,12 @@ body.lockscreen {
   z-index: 2;
 }
 
-/* LADO DERECHO MÁS MODERNO */
+/* TIPOGRAFIA GENERAL */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* LADO DERECHO */
 .login-right {
   width: 60%;
   padding: 60px 55px;
@@ -75,87 +80,83 @@ body.lockscreen {
 
 /* TITULO CENTRO MEDICO */
 .lockscreen-logo a {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 700;
-  color: #2c3e50;
+  color: #1f3c88; /* azul médico */
 }
 
 /* NOMBRE DEL SISTEMA */
 .lockscreen-name {
-  font-size: 17px;
+  font-size: 16px;
   color: #6c757d;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 /* LOGO */
 .logo-center img {
-  width: 110px;
-  margin: 20px auto;
+  width: 105px;
+  margin: 15px auto 25px auto;
   display: block;
-  transition: transform 0.3s ease;
 }
 
-.logo-center img:hover {
-  transform: scale(1.05);
-}
-
-/* INPUT MODERNO */
+/* INPUT */
 .input-modern {
   display: flex;
   align-items: center;
-  margin-top: 15px;
+  margin-bottom: 10px;
 }
 
 .input-modern input {
   border-radius: 30px 0 0 30px;
   height: 52px;
-  border: 1px solid #dcdcdc;
+  border: 1px solid #e4e6ef;
   padding-left: 18px;
   font-size: 15px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  background: #f8f9fb;
+  transition: all 0.2s ease;
 }
 
 .input-modern input:focus {
-  border-color: #28a745;
-  box-shadow: 0 0 6px rgba(40,167,69,0.3);
+  background: white;
+  border-color: #1f8ef1;
+  box-shadow: 0 0 0 3px rgba(31,142,241,0.15);
 }
 
 /* BOTON LOGIN */
 .input-modern .btn {
   border-radius: 0 30px 30px 0;
   height: 52px;
-  padding: 0 20px;
-  background: #28a745;
+  padding: 0 22px;
+  background: #2ecc71; /* verde salud */
   border: none;
-  transition: 0.3s;
+  transition: 0.25s;
 }
 
 .input-modern .btn:hover {
-  background: #218838;
-  transform: scale(1.05);
+  background: #27ae60;
 }
 
 /* MENSAJE */
 .help-block {
-  font-size: 15px;
-  color: #666;
-  margin-top: 22px;
+  font-size: 14px;
+  color: #6c757d;
+  margin-top: 18px;
 }
 
 /* SOPORTE */
 .soporte-login {
-  margin-top: 20px;
+  margin-top: 15px;
   font-size: 14px;
   color: #555;
 }
 
 .soporte-login i {
   margin-right: 6px;
-  color: #007bff;
+  color: #1f8ef1;
 }
 
 .soporte-login .telefono {
   font-size: 16px;
-  font-weight: bold;
-  color: #28a745;
+  font-weight: 600;
+  color: #2ecc71;
 }
