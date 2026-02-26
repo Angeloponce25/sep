@@ -59,6 +59,7 @@ body.lockscreen {
 /* LOGO DEL LADO IZQUIERDO */
 .login-left img {
   width: 90%;
+  height: auto;
   position: relative;
   z-index: 2;
 }
