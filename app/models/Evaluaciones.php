@@ -44,12 +44,11 @@ class Evaluaciones {
                     ON p.id_test = ev.id_test
                 INNER JOIN psicologia_opciones o 
                     ON o.id_pregunta = p.id_pregunta
-                WHERE ev.id_evaluacion = '1'
+                WHERE ev.id_evaluacion = $id_evaluacion
                 ORDER BY p.id_pregunta, o.id_opcion";
 
         $result = $this->db->query($sql);
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
-    
 }
