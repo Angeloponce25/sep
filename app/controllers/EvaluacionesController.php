@@ -23,8 +23,27 @@ class EvaluacionesController extends Controller {
 
         $rows = $this->evaluacionesModel->getPreguntasExamen($id_evaluacion);
 
+        $preguntas = [];
+
+        foreach($rows as $r){
+
+            $id = $r['id_pregunta'];
+
+            if(!isset($preguntas[$id])){
+                $preguntas[$id] = [
+                    "pregunta"=>$r['pregunta'],
+                    "opciones"=>[]
+                ];
+            }
+
+            $preguntas[$id]["opciones"][] = $r['texto'];
+
+        }
+
+        $preguntas = array_values($preguntas);
+
         echo "<pre>";
-        print_r($rows);
+        print_r($preguntas);
         exit;
 
     }
