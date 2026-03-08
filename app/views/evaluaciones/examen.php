@@ -24,9 +24,41 @@ $id_evaluacion = $data['id_evaluacion'];
 
 <h4>ID Evaluación: <?php echo $id_evaluacion; ?></h4>
 
-<pre>
-<?php print_r($preguntas); ?>
-</pre>
+<form method="post" action="">
+
+<?php foreach($preguntas as $index => $p): ?>
+
+<div class="form-group">
+
+<h4>
+<?php echo ($index + 1) . ". " . $p['pregunta']; ?>
+</h4>
+
+<?php foreach($p['opciones'] as $i => $op): ?>
+
+<div class="radio">
+<label>
+<input type="radio"
+       name="pregunta_<?php echo $index; ?>"
+       value="<?php echo $i; ?>">
+
+<?php echo $op; ?>
+</label>
+</div>
+
+<?php endforeach; ?>
+
+</div>
+
+<hr>
+
+<?php endforeach; ?>
+
+<button type="submit" class="btn btn-success">
+Enviar examen
+</button>
+
+</form>
 
 </div>
 
