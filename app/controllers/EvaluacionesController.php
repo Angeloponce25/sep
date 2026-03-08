@@ -23,12 +23,6 @@ class EvaluacionesController extends Controller {
 
         $rows = $this->evaluacionesModel->getPreguntasExamen($id_evaluacion);
 
-        // DEBUG TEMPORAL
-        echo "<pre>";
-        print_r($rows);
-        exit;
-
-        // Convertir a estructura JS
         $preguntas = [];
 
         foreach($rows as $r){
@@ -49,9 +43,10 @@ class EvaluacionesController extends Controller {
         $preguntas = array_values($preguntas);
 
         $this->view('evaluaciones/examen', [
-            'preguntas' => json_encode($preguntas),
+            'preguntas' => json_encode($preguntas, JSON_UNESCAPED_UNICODE),
             'id_evaluacion'=>$id_evaluacion
         ]);
+
     }
 
 }

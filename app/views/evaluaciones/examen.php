@@ -52,7 +52,6 @@ Siguiente
 <script>
 
 const examen = <?= $data['preguntas'] ?>;
-const idEvaluacion = <?= $data['id_evaluacion'] ?>;
 
 let preguntaActual = 0;
 let respuestas = [];
@@ -80,50 +79,6 @@ function cargarPregunta() {
   document.getElementById("opciones").innerHTML = html;
 
   actualizarBarra();
-}
-
-function actualizarBarra() {
-
-let progreso = ((preguntaActual+1)/examen.length)*100;
-
-document.getElementById("barraProgreso").style.width = progreso+"%";
-
-}
-
-document.getElementById("btnSiguiente").addEventListener("click",()=>{
-
-let seleccion=document.querySelector('input[name="respuesta"]:checked');
-
-if(!seleccion){
-alert("Selecciona una opción");
-return;
-}
-
-respuestas.push(seleccion.value);
-
-preguntaActual++;
-
-if(preguntaActual < examen.length){
-
-cargarPregunta();
-
-}else{
-
-finalizarExamen();
-
-}
-
-});
-
-function finalizarExamen(){
-
-document.querySelector(".box-body").innerHTML=`
-<div class="alert alert-success text-center">
-<h3><i class="fa fa-check"></i> Examen finalizado</h3>
-<p>Gracias por completar la evaluación</p>
-</div>
-`;
-
 }
 
 cargarPregunta();
