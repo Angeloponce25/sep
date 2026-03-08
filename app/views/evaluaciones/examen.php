@@ -1,6 +1,11 @@
 <?php require APP_PATH . '/views/layouts/app_header.php'; ?>
 <?php require APP_PATH . '/views/layouts/navbar.php'; ?>
-<?php require APP_PATH . '/views/layouts/sidebar.php'; ?>
+<?php require APP_PATH . '/views/layouts/sidebar.php'; 
+
+$paciente = $data['preguntas'];
+
+
+?>
 
 <div class="content-wrapper">
 
