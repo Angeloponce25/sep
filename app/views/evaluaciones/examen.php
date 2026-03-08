@@ -1,10 +1,9 @@
 <?php require APP_PATH . '/views/layouts/app_header.php'; ?>
 <?php require APP_PATH . '/views/layouts/navbar.php'; ?>
-<?php require APP_PATH . '/views/layouts/sidebar.php'; 
-
-var_dump($data);
-
-
+<?php require APP_PATH . '/views/layouts/sidebar.php'; ?>
+<?php
+$preguntas = $data['preguntas'];
+$id_evaluacion = $data['id_evaluacion'];
 ?>
 
 <div class="content-wrapper">
@@ -45,12 +44,15 @@ Siguiente
 </div>
 
 </section>
-
+<pre>
+<?php print_r($data); ?>
+</pre>
 </div>
 
 <script>
 
-const examen = <?= $preguntas ?>;
+const examen = <?= $data['preguntas'] ?>;
+const idEvaluacion = <?= $data['id_evaluacion'] ?>;
 
 let preguntaActual = 0;
 let respuestas = [];
