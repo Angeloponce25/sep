@@ -4,6 +4,7 @@
 
 <?php
 $paciente = $data['data'];
+$evaluaciones = $data['evaluaciones'];
 
 $nombreCompleto = ($paciente['pac_nombres'] ?? '') . ' ' .
                   ($paciente['pac_primer_ape'] ?? '') . ' ' .
@@ -18,7 +19,7 @@ if (!empty($paciente['pac_fecnac'])) {
     )->y . ' años';
 }
 
-var_dump($data['evaluaciones']);
+
 ?>
 
 <div class="content-wrapper">
@@ -86,107 +87,76 @@ var_dump($data['evaluaciones']);
 
     <div class="row">
 
-      <!-- EXAMEN -->
-      <div class="col-md-6">
-        <div class="box box-solid examen-card">
-          <div class="box-body" style="display:flex;align-items:center;">
+<?php foreach($evaluaciones as $e): ?>
 
-            <div class="icono-examen">
-              <i class="fa fa-user"></i>
-            </div>
+  <?php
 
-            <div style="flex:1;padding-left:15px;">
-              <h4>Test de Estrés Laboral</h4>
-              <p class="text-muted">
-                Evalúa el nivel de estrés en el entorno de trabajo.
-              </p>
-              <span class="label label-warning">Pendiente</span>
-            </div>
+  $estado = $e['estado_examen'];
+  $label = '';
+  $btn = '';
+  $iconBtn = '';
 
-            <button class="btn btn-primary btn-lg">
-              <i class="fa fa-arrow-right"></i>
-            </button>
+  if($estado == 0){
+    $label = 'label label-warning';
+    $textoEstado = 'Pendiente';
+    $btn = 'btn btn-primary';
+    $iconBtn = 'fa-arrow-right';
+  }
 
-          </div>
+  if($estado == 1){
+    $label = 'label label-primary';
+    $textoEstado = 'En proceso';
+    $btn = 'btn btn-warning';
+    $iconBtn = 'fa-clock-o';
+  }
+
+  if($estado == 2){
+    $label = 'label label-success';
+    $textoEstado = 'Completado';
+    $btn = 'btn btn-success';
+    $iconBtn = 'fa-check';
+  }
+
+  ?>
+
+  <div class="col-md-6">
+    <div class="box box-solid examen-card">
+
+      <div class="box-body" style="display:flex;align-items:center;">
+
+        <div class="icono-examen">
+          <i class="fa <?= $e['icono'] ?>"></i>
         </div>
-      </div>
 
-      <!-- EXAMEN -->
-      <div class="col-md-6">
-        <div class="box box-solid examen-card">
-          <div class="box-body" style="display:flex;align-items:center;">
+        <div style="flex:1;padding-left:15px;">
 
-            <div class="icono-examen">
-              <i class="fa fa-bed"></i>
-            </div>
+          <h4><?= $e['titulo'] ?></h4>
 
-            <div style="flex:1;padding-left:15px;">
-              <h4>Test de Calidad de Sueño</h4>
-              <p class="text-muted">
-                Mide hábitos y problemas relacionados al descanso.
-              </p>
-              <span class="label label-success">Completado</span>
-            </div>
+          <p class="text-muted">
+            <?= $e['descripcion'] ?>
+          </p>
 
-            <button class="btn btn-success btn-lg">
-              <i class="fa fa-check"></i>
-            </button>
+          <span class="<?= $label ?>">
+            <?= $textoEstado ?>
+          </span>
 
-          </div>
         </div>
-      </div>
 
-      <!-- EXAMEN -->
-      <div class="col-md-6">
-        <div class="box box-solid examen-card">
-          <div class="box-body" style="display:flex;align-items:center;">
+        <a href="<?= BASE_URL ?>/examen/<?= $e['id_evaluacion'] ?>"
+          class="btn <?= $btn ?> btn-lg">
 
-            <div class="icono-examen">
-              <i class="fa fa-heartbeat"></i>
-            </div>
+          <i class="fa <?= $iconBtn ?>"></i>
 
-            <div style="flex:1;padding-left:15px;">
-              <h4>Test de Ansiedad</h4>
-              <p class="text-muted">
-                Identifica síntomas físicos y emocionales de ansiedad.
-              </p>
-              <span class="label label-warning">Pendiente</span>
-            </div>
+        </a>
 
-            <button class="btn btn-primary btn-lg">
-              <i class="fa fa-arrow-right"></i>
-            </button>
-
-          </div>
-        </div>
-      </div>
-
-      <!-- EXAMEN -->
-      <div class="col-md-6">
-        <div class="box box-solid examen-card">
-          <div class="box-body" style="display:flex;align-items:center;">
-
-            <div class="icono-examen">
-              <i class="fa fa-users"></i>
-            </div>
-
-            <div style="flex:1;padding-left:15px;">
-              <h4>Test de Clima Laboral</h4>
-              <p class="text-muted">
-                Analiza la percepción del ambiente de trabajo.
-              </p>
-              <span class="label label-primary">En proceso</span>
-            </div>
-
-            <button class="btn btn-warning btn-lg">
-              <i class="fa fa-clock-o"></i>
-            </button>
-
-          </div>
-        </div>
       </div>
 
     </div>
+  </div>
+
+  <?php endforeach; ?>
+
+</div>
 
   </section>
 </div>
