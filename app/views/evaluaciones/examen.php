@@ -2,7 +2,7 @@
 <?php require APP_PATH . '/views/layouts/navbar.php'; ?>
 <?php require APP_PATH . '/views/layouts/sidebar.php'; 
 
-$paciente = $data['preguntas'];
+var_dump($data);
 
 
 ?>
