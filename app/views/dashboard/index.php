@@ -142,7 +142,7 @@ if (!empty($paciente['pac_fecnac'])) {
 
         </div>
 
-        <a href="<?= BASE_URL ?>/examen/<?= $e['id_evaluacion'] ?>"
+        <a href="<?= BASE_URL ?>/evaluaciones/examen/<?= $e['id_evaluacion'] ?>"
           class="btn <?= $btn ?> btn-lg">
 
           <i class="fa <?= $iconBtn ?>"></i>
