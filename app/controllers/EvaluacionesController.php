@@ -23,29 +23,9 @@ class EvaluacionesController extends Controller {
 
         $rows = $this->evaluacionesModel->getPreguntasExamen($id_evaluacion);
 
-        $preguntas = [];
-
-        foreach($rows as $r){
-
-            $id = $r['id_pregunta'];
-
-            if(!isset($preguntas[$id])){
-                $preguntas[$id] = [
-                    "pregunta"=>$r['pregunta'],
-                    "opciones"=>[]
-                ];
-            }
-
-            $preguntas[$id]["opciones"][] = $r['texto'];
-
-        }
-
-        $preguntas = array_values($preguntas);
-
-        $this->view('evaluaciones/examen', [
-            'preguntas' => json_encode($preguntas, JSON_UNESCAPED_UNICODE),
-            'id_evaluacion'=>$id_evaluacion
-        ]);
+        echo "<pre>";
+        print_r($rows);
+        exit;
 
     }
 

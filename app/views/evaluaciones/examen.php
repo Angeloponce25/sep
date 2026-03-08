@@ -48,39 +48,3 @@ Siguiente
 <?php print_r($data); ?>
 </pre>
 </div>
-
-<script>
-
-const examen = <?= $data['preguntas'] ?>;
-
-let preguntaActual = 0;
-let respuestas = [];
-
-function cargarPregunta() {
-
-  document.getElementById("preguntaTexto").innerHTML =
-    examen[preguntaActual].pregunta;
-
-  let html = "";
-
-  examen[preguntaActual].opciones.forEach((op, i) => {
-
-    html += `
-      <div class="radio">
-        <label>
-          <input type="radio" name="respuesta" value="${i}">
-          ${op}
-        </label>
-      </div>
-    `;
-
-  });
-
-  document.getElementById("opciones").innerHTML = html;
-
-  actualizarBarra();
-}
-
-cargarPregunta();
-
-</script>
