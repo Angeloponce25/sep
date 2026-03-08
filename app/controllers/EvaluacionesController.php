@@ -21,7 +21,12 @@ class EvaluacionesController extends Controller {
     public function examen($id_evaluacion)
     {
 
-        $rows = $this->evaluacionesModel->getPreguntasExamen('1');
+        $rows = $this->evaluacionesModel->getPreguntasExamen($id_evaluacion);
+
+        // DEBUG TEMPORAL
+        echo "<pre>";
+        print_r($rows);
+        exit;
 
         // Convertir a estructura JS
         $preguntas = [];
