@@ -28,4 +28,28 @@ class Evaluaciones {
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
+    // ===============================
+    // OBTENER PREGUNTAS DEL EXAMEN
+    // ===============================
+    public function getPreguntasExamen($id_evaluacion)
+    {
+        $sql = "SELECT 
+                    p.id_pregunta,
+                    p.pregunta,
+                    o.id_opcion,
+                    o.texto
+                FROM piv_testpsicologico ev
+                INNER JOIN psicologia_preguntas p 
+                    ON p.id_test = ev.id_test
+                INNER JOIN psicologia_opciones o 
+                    ON o.id_pregunta = p.id_pregunta
+                WHERE ev.id_evaluacion = '1'
+                ORDER BY p.id_pregunta, o.id_opcion";
+
+        $result = $this->db->query($sql);
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+    
 }
