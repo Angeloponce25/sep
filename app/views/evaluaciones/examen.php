@@ -45,6 +45,12 @@ Siguiente
 
 </section>
 <pre>
-<?php print_r($data); ?>
+<?php
+echo "JSON recibido:\n";
+var_dump($data['preguntas']);
+
+echo "\n\nDecodificado:\n";
+print_r(json_decode($data['preguntas'], true));
+?>
 </pre>
 </div>
