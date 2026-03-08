@@ -44,7 +44,7 @@ class EvaluacionesController extends Controller {
         $preguntas = array_values($preguntas);
 
         $this->view('evaluaciones/examen', [
-            'preguntas' => json_encode($preguntas),
+            'preguntas' => 'asdasd',
             'id_evaluacion'=>$id_evaluacion
         ]);
     }
