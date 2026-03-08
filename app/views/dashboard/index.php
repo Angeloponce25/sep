@@ -17,6 +17,8 @@ if (!empty($paciente['pac_fecnac'])) {
         date_create('today')
     )->y . ' años';
 }
+
+var_dump($data['evaluaciones']);
 ?>
 
 <div class="content-wrapper">

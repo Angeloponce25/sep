@@ -1,11 +1,13 @@
 <?php
 
 require_once '../app/models/User.php';
+require_once '../app/models/Evaluaciones.php';
 
 class DashboardController extends Controller {
 
 
     private $userModel;
+    private $evaluacionesModel;
     
     public function __construct() {
         session_start();
@@ -16,16 +18,21 @@ class DashboardController extends Controller {
         }
 
         $this->userModel = new User();
+        $this->evaluacionesModel = new Evaluaciones();
 
     }
 
     public function index()
     {     
-        $paciente = $this->userModel->getPacienteById($_SESSION['user']['id_paciente']);
+        $id=$_SESSION['user']['id_paciente'];
+        
+        $paciente = $this->userModel->getPacienteById($id);
+        $evaluaciones = $this->evaluacionesModel->getEvaluacionesPaciente($id);
 
         $this->view('dashboard/index', [
             'title' => 'Dashboard',
-            'data' => $paciente
+            'data' => $paciente,
+            'evaluaciones' => $evaluaciones
         ]);
     }
 }
