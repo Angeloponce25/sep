@@ -22,43 +22,23 @@ $id_evaluacion = $data['id_evaluacion'];
 
 <div class="box-body">
 
-<h4>ID Evaluación: <?php echo $id_evaluacion; ?></h4>
-
-<form method="post" action="">
-
-<?php foreach($preguntas as $index => $p): ?>
-
-<div class="form-group">
-
-<h4>
-<?php echo ($index + 1) . ". " . $p['pregunta']; ?>
-</h4>
-
-<?php foreach($p['opciones'] as $i => $op): ?>
-
-<div class="radio">
-<label>
-<input type="radio"
-       name="pregunta_<?php echo $index; ?>"
-       value="<?php echo $i; ?>">
-
-<?php echo $op; ?>
-</label>
+<div class="progress">
+<div id="barraProgreso" class="progress-bar progress-bar-success" style="width:0%"></div>
 </div>
 
-<?php endforeach; ?>
+<h4 id="contadorPregunta"></h4>
 
-</div>
+<h4 id="preguntaTexto"></h4>
 
-<hr>
+<div id="opciones"></div>
 
-<?php endforeach; ?>
+<br>
 
-<button type="submit" class="btn btn-success">
-Enviar examen
+<button id="btnAnterior" class="btn btn-default">Anterior</button>
+
+<button id="btnSiguiente" class="btn btn-primary pull-right">
+Siguiente
 </button>
-
-</form>
 
 </div>
 
@@ -70,3 +50,94 @@ Enviar examen
 </section>
 
 </div>
+
+
+<script>
+
+const examen = <?= json_encode($preguntas, JSON_UNESCAPED_UNICODE); ?>;
+
+let preguntaActual = 0;
+let respuestas = [];
+
+function cargarPregunta(){
+
+    let p = examen[preguntaActual];
+
+    document.getElementById("contadorPregunta").innerHTML =
+        "Pregunta " + (preguntaActual + 1) + " de " + examen.length;
+
+    document.getElementById("preguntaTexto").innerHTML = p.pregunta;
+
+    let html = "";
+
+    p.opciones.forEach((op,i)=>{
+
+        let checked = respuestas[preguntaActual] == i ? "checked" : "";
+
+        html += `
+        <div class="radio">
+            <label>
+                <input type="radio" name="respuesta" value="${i}" ${checked}>
+                ${op}
+            </label>
+        </div>
+        `;
+
+    });
+
+    document.getElementById("opciones").innerHTML = html;
+
+    actualizarBarra();
+
+}
+
+function actualizarBarra(){
+
+    let progreso = ((preguntaActual+1)/examen.length)*100;
+
+    document.getElementById("barraProgreso").style.width =
+        progreso + "%";
+
+}
+
+document.getElementById("btnSiguiente").onclick = function(){
+
+    let seleccion = document.querySelector('input[name="respuesta"]:checked');
+
+    if(seleccion){
+
+        respuestas[preguntaActual] = seleccion.value;
+
+    }
+
+    if(preguntaActual < examen.length-1){
+
+        preguntaActual++;
+
+        cargarPregunta();
+
+    }else{
+
+        console.log("Respuestas:", respuestas);
+
+        alert("Examen terminado");
+
+    }
+
+}
+
+document.getElementById("btnAnterior").onclick = function(){
+
+    if(preguntaActual > 0){
+
+        preguntaActual--;
+
+        cargarPregunta();
+
+    }
+
+}
+
+cargarPregunta();
+
+</script>
