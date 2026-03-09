@@ -30,7 +30,7 @@ $id_evaluacion = $data['id_evaluacion'];
 
                     <h4 id="preguntaTexto" class="text-bold" style="margin-bottom: 25px;"></h4>
 
-                    <div id="opciones" style="font-size: 3.1em; line-height: 3.8;"></div>
+                    <div id="opciones" style="font-size: 2.1em; line-height: 1.8;"></div>
 
                     <br><br>
 
