@@ -30,16 +30,16 @@ $id_evaluacion = $data['id_evaluacion'];
 
                     <h4 id="preguntaTexto" class="text-bold" style="margin-bottom: 25px;"></h4>
 
-                    <div id="opciones" style="font-size: 1.1em; line-height: 1.8;"></div>
+                    <div id="opciones" style="font-size: 3.1em; line-height: 3.8;"></div>
 
                     <br><br>
 
                     <div class="text-center" style="margin-top: 30px;">
-                        <button id="btnAnterior" class="btn btn-default btn-lg" style="min-width: 140px;">
+                        <button id="btnAnterior" class="btn btn-default btn-lg" style="min-width: 420px;">
                             Anterior
                         </button>
 
-                        <button id="btnSiguiente" class="btn btn-primary btn-lg pull-right" style="min-width: 140px;">
+                        <button id="btnSiguiente" class="btn btn-primary btn-lg pull-right" style="min-width: 420px;">
                             Siguiente
                         </button>
                     </div>
