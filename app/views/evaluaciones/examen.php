@@ -194,3 +194,4 @@ document.getElementById("btnAnterior").onclick = function(){
 cargarPregunta();
 
 </script>
+<?php require '../app/views/layouts/app_footer.php'; ?>
