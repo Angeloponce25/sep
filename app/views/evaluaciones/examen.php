@@ -113,10 +113,9 @@ function guardarExamen(){
             respuestas: respuestas
         },
 
-        success: function(response){
+        success: function(response){            
             
-            console.log("Respuesta del servidor:", response);
-            /*if(response.trim() === "success"){
+            if(response.trim() === "success"){
 
                 Swal.fire({
                     icon: 'success',
@@ -134,7 +133,7 @@ function guardarExamen(){
                     text: 'No se pudo guardar el examen'
                 });
 
-            }*/
+            }
 
         },
 

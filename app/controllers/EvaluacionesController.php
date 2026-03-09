@@ -52,7 +52,7 @@ class EvaluacionesController extends Controller {
     public function guardarRespuestas()
     {
 
-        /*if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
             $id_evaluacion = $_POST['id_evaluacion'];
             $respuestas = $_POST['respuestas'];
@@ -85,7 +85,7 @@ class EvaluacionesController extends Controller {
 
             echo "success";
 
-        }*/
+        }
 
     }
 
