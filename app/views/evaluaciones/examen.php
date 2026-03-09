@@ -9,48 +9,50 @@ $id_evaluacion = $data['id_evaluacion'];
 
 <div class="content-wrapper">
 
-<section class="content">
+    <section class="content">
 
-<div class="row">
-<div class="col-md-8 col-md-offset-2">
+        <!-- Contenedor centrado pero más ancho -->
+        <div style="max-width: 1100px; margin: 0 auto 30px auto;">
 
-<div class="box box-primary">
+            <div class="box box-primary">
 
-<div class="box-header">
-<h3 class="box-title">Examen Psicológico</h3>
+                <div class="box-header with-border">
+                    <h3 class="box-title">Examen Psicológico</h3>
+                </div>
+
+                <div class="box-body">
+
+                    <div class="progress" style="height: 25px; margin-bottom: 25px;">
+                        <div id="barraProgreso" class="progress-bar progress-bar-success" style="width:0%"></div>
+                    </div>
+
+                    <h4 id="contadorPregunta" class="text-center" style="margin-bottom: 20px;"></h4>
+
+                    <h4 id="preguntaTexto" class="text-bold" style="margin-bottom: 25px;"></h4>
+
+                    <div id="opciones" style="font-size: 1.1em; line-height: 1.8;"></div>
+
+                    <br><br>
+
+                    <div class="text-center" style="margin-top: 30px;">
+                        <button id="btnAnterior" class="btn btn-default btn-lg" style="min-width: 140px;">
+                            Anterior
+                        </button>
+
+                        <button id="btnSiguiente" class="btn btn-primary btn-lg pull-right" style="min-width: 140px;">
+                            Siguiente
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
 </div>
-
-<div class="box-body">
-
-<div class="progress">
-<div id="barraProgreso" class="progress-bar progress-bar-success" style="width:0%"></div>
-</div>
-
-<h4 id="contadorPregunta"></h4>
-
-<h4 id="preguntaTexto"></h4>
-
-<div id="opciones"></div>
-
-<br>
-
-<button id="btnAnterior" class="btn btn-default">Anterior</button>
-
-<button id="btnSiguiente" class="btn btn-primary pull-right">
-Siguiente
-</button>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</section>
-
-</div>
-
 
 <script>
 
@@ -60,8 +62,7 @@ const idEvaluacion = <?= $id_evaluacion ?>;
 let preguntaActual = 0;
 let respuestas = [];
 
-function cargarPregunta(){
-
+function cargarPregunta() {
     let p = examen[preguntaActual];
 
     document.getElementById("contadorPregunta").innerHTML =
@@ -71,126 +72,93 @@ function cargarPregunta(){
 
     let html = "";
 
-    p.opciones.forEach((op,i)=>{
-
+    p.opciones.forEach((op, i) => {
         let checked = respuestas[preguntaActual] == i ? "checked" : "";
 
         html += `
-        <div class="radio">
-            <label>
+        <div class="radio" style="margin: 15px 0;">
+            <label style="font-size: 1.05em; cursor: pointer;">
                 <input type="radio" name="respuesta" value="${i}" ${checked}>
-                ${op}
+                  ${op}
             </label>
         </div>
         `;
-
     });
 
     document.getElementById("opciones").innerHTML = html;
 
     actualizarBarra();
-
 }
 
-function actualizarBarra(){
-
-    let progreso = ((preguntaActual+1)/examen.length)*100;
-
-    document.getElementById("barraProgreso").style.width =
-        progreso + "%";
-
+function actualizarBarra() {
+    let progreso = ((preguntaActual + 1) / examen.length) * 100;
+    document.getElementById("barraProgreso").style.width = progreso + "%";
 }
 
-function guardarExamen(){
-
+function guardarExamen() {
     $.ajax({
-
         url: "<?= BASE_URL ?>/evaluaciones/guardarRespuestas",
         type: "POST",
-
-        data:{
+        data: {
             id_evaluacion: idEvaluacion,
             respuestas: respuestas
         },
-
-        success: function(response){            
-            
-            if(response.trim() === "success"){
-
+        success: function(response) {
+            if (response.trim() === "success") {
                 Swal.fire({
                     icon: 'success',
                     title: 'Examen finalizado',
                     text: 'Las respuestas fueron guardadas correctamente'
-                }).then(()=>{
+                }).then(() => {
                     window.location.href = "<?= BASE_URL ?>/evaluaciones";
                 });
-
-            }else{
-
+            } else {
                 Swal.fire({
                     icon: 'error',
                     title: 'Error',
                     text: 'No se pudo guardar el examen'
                 });
-
             }
-
         },
-
-        error: function(){
-
+        error: function() {
             Swal.fire({
                 icon: 'error',
                 title: 'Error',
                 text: 'Error de conexión con el servidor'
             });
-
         }
-
     });
-
 }
 
-document.getElementById("btnSiguiente").onclick = function(){
-
+document.getElementById("btnSiguiente").onclick = function() {
     let seleccion = document.querySelector('input[name="respuesta"]:checked');
 
-    if(!seleccion){
-        alert("Selecciona una opción");
+    if (!seleccion) {
+        alert("Selecciona una opción antes de continuar");
         return;
     }
 
-    respuestas[preguntaActual] = seleccion.value;
+    respuestas[preguntaActual] = parseInt(seleccion.value);
 
-    if(preguntaActual < examen.length-1){
-
+    if (preguntaActual < examen.length - 1) {
         preguntaActual++;
-
         cargarPregunta();
-
-    }else{
-
-        console.log("Respuestas:", respuestas);
-
+    } else {
+        console.log("Respuestas finales:", respuestas);
         guardarExamen();
-
     }
+};
 
-}
-
-document.getElementById("btnAnterior").onclick = function(){
-
-    if(preguntaActual > 0){
-
+document.getElementById("btnAnterior").onclick = function() {
+    if (preguntaActual > 0) {
         preguntaActual--;
-
         cargarPregunta();
-
     }
+};
 
-}
-
+// Cargar la primera pregunta al iniciar
 cargarPregunta();
 
 </script>
+
 <?php require '../app/views/layouts/app_footer.php'; ?>
