@@ -28,7 +28,7 @@ $id_evaluacion = $data['id_evaluacion'];
 
                     <h4 id="contadorPregunta" class="text-center" style="margin-bottom: 20px;"></h4>
 
-                    <h4 id="preguntaTexto" class="text-bold" style="margin-bottom: 25px;"></h4>
+                    <h4 id="preguntaTexto" class="text-bold" style="margin-bottom: 25px; font-size: 2.1em;"></h4>
 
                     <div id="opciones" style="font-size: 2.1em; line-height: 2.8;"></div>
 
