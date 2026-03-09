@@ -12,7 +12,7 @@ $id_evaluacion = $data['id_evaluacion'];
     <section class="content">
 
         <!-- Contenedor centrado pero más ancho -->
-        <div style="max-width: 100% ; margin: 0 auto 30px auto;">
+        <div style="max-width: 100% ; margin: 0 auto 80px auto;">
 
             <div class="box box-primary">
 
