@@ -35,11 +35,11 @@ $id_evaluacion = $data['id_evaluacion'];
                     <br><br>
 
                     <div class="text-center" style="margin-top: 30px;">
-                        <button id="btnAnterior" class="btn btn-default btn-lg" style="min-width: 300px;">
+                        <button id="btnAnterior" class="btn btn-default btn-lg" style="min-width: 140px;">
                             Anterior
                         </button>
 
-                        <button id="btnSiguiente" class="btn btn-primary btn-lg pull-right" style="min-width: 300px;">
+                        <button id="btnSiguiente" class="btn btn-primary btn-lg pull-right" style="min-width: 140px;">
                             Siguiente
                         </button>
                     </div>
