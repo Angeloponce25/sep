@@ -1,45 +1,48 @@
 <?php require APP_PATH . '/views/layouts/app_header.php'; ?>
-<?php require APP_PATH . '/views/layouts/navbar.php'; ?>
-<?php require APP_PATH . '/views/layouts/sidebar.php'; ?>
+<?php require APP_PATH . '/views/layouts/navbar.php'; ?>   <!-- Comenta si no necesitas navbar en kiosk -->
+<?php require APP_PATH . '/views/layouts/sidebar.php'; ?>   <!-- Comenta la sidebar completamente en kiosk -->
 
 <?php
 $preguntas = $data['preguntas'];
 $id_evaluacion = $data['id_evaluacion'];
 ?>
 
-<div class="content-wrapper">
+<div class="content-wrapper" style="margin-left: 0 !important; margin-right: 0 !important; background: #fff;">
 
-    <section class="content">
+    <section class="content" style="padding: 20px 40px; min-height: 100vh; display: flex; align-items: center; justify-content: center;">
 
-        <!-- Contenedor centrado pero más ancho -->
-        <div style="max-width: 100% ; margin: 0 auto 30px auto;">
+        <div style="width: 100%; max-width: 1600px; margin: 0 auto;">  <!-- Ajusta max-width según resolución de la máquina -->
 
-            <div class="box box-primary">
+            <div class="box box-primary" style="border: none; box-shadow: none; background: transparent;">
 
-                <div class="box-header with-border">
-                    <h3 class="box-title">Examen Psicológico</h3>
+                <div class="box-header" style="border-bottom: none; text-align: center; padding: 0 0 30px 0;">
+                    <h3 class="box-title" style="font-size: 48px; font-weight: bold; color: #333;">
+                        Examen Psicológico
+                    </h3>
                 </div>
 
-                <div class="box-body">
+                <div class="box-body" style="padding: 0;">
 
-                    <div class="progress" style="height: 25px; margin-bottom: 25px;">
-                        <div id="barraProgreso" class="progress-bar progress-bar-success" style="width:0%"></div>
+                    <div class="progress" style="height: 40px; margin-bottom: 50px; border-radius: 20px; overflow: hidden;">
+                        <div id="barraProgreso" class="progress-bar progress-bar-success" style="width:0%; font-size: 24px; line-height: 40px;">
+                            <!-- Progreso visible opcional -->
+                        </div>
                     </div>
 
-                    <h4 id="contadorPregunta" class="text-center" style="margin-bottom: 20px;"></h4>
+                    <h4 id="contadorPregunta" style="font-size: 36px; text-align: center; margin-bottom: 40px; color: #555;"></h4>
 
-                    <h4 id="preguntaTexto" class="text-bold" style="margin-bottom: 25px; font-size: 2.1em;"></h4>
+                    <h4 id="preguntaTexto" style="font-size: 42px; font-weight: 600; line-height: 1.4; margin-bottom: 60px; text-align: center; color: #222;"></h4>
 
-                    <div id="opciones" style="font-size: 2.1em; line-height: 2.8;"></div>
+                    <div id="opciones" style="font-size: 34px; line-height: 1.8;"></div>
 
-                    <br><br>
+                    <div style="height: 80px;"></div> <!-- Espacio -->
 
-                    <div class="text-center" style="margin-top: 30px;">
-                        <button id="btnAnterior" class="btn btn-default btn-lg" style="min-width: 420px;">
+                    <div style="text-align: center; margin-top: 60px;">
+                        <button id="btnAnterior" class="btn btn-default btn-lg" style="font-size: 32px; padding: 20px 60px; min-width: 280px; margin-right: 80px; border-radius: 12px;">
                             Anterior
                         </button>
 
-                        <button id="btnSiguiente" class="btn btn-primary btn-lg pull-right" style="min-width: 420px;">
+                        <button id="btnSiguiente" class="btn btn-primary btn-lg" style="font-size: 32px; padding: 20px 60px; min-width: 280px; border-radius: 12px;">
                             Siguiente
                         </button>
                     </div>
@@ -53,6 +56,37 @@ $id_evaluacion = $data['id_evaluacion'];
     </section>
 
 </div>
+
+<style>
+    body, html {
+        font-family: 'Segoe UI', Roboto, Arial, sans-serif !important;
+        -webkit-touch-callout: none; /* Evita menú contextual en touch */
+        -webkit-user-select: none;
+        user-select: none;
+    }
+    .radio label {
+        display: block !important;
+        padding: 25px 30px !important;
+        margin: 20px 0 !important;
+        background: #f8f9fa;
+        border: 3px solid #ddd;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    .radio label:hover,
+    .radio input:checked + span {  /* Mejor visibilidad */
+        background: #e3f2fd;
+        border-color: #2196f3;
+    }
+    .radio input[type="radio"] {
+        transform: scale(2.2);  /* Radio buttons más grandes */
+        margin-right: 20px !important;
+    }
+    .progress-bar {
+        background-color: #4caf50 !important; /* Verde visible */
+    }
+</style>
 
 <script>
 
@@ -71,20 +105,17 @@ function cargarPregunta() {
     document.getElementById("preguntaTexto").innerHTML = p.pregunta;
 
     let html = "";
-
     p.opciones.forEach((op, i) => {
         let checked = respuestas[preguntaActual] == i ? "checked" : "";
-
         html += `
-        <div class="radio" style="margin: 15px 0;">
-            <label style="font-size: 1.05em; cursor: pointer;">
-                <input type="radio" name="respuesta" value="${i}" ${checked}>
-                  ${op}
+        <div class="radio">
+            <label>
+                <input type="radio" name="respuesta" value="${i}" ${checked} style="margin-right: 25px;">
+                ${op}
             </label>
         </div>
         `;
     });
-
     document.getElementById("opciones").innerHTML = html;
 
     actualizarBarra();
@@ -93,6 +124,8 @@ function cargarPregunta() {
 function actualizarBarra() {
     let progreso = ((preguntaActual + 1) / examen.length) * 100;
     document.getElementById("barraProgreso").style.width = progreso + "%";
+    // Opcional: mostrar % dentro de la barra
+    document.getElementById("barraProgreso").textContent = Math.round(progreso) + "%";
 }
 
 function guardarExamen() {
@@ -107,47 +140,36 @@ function guardarExamen() {
             if (response.trim() === "success") {
                 Swal.fire({
                     icon: 'success',
-                    title: 'Examen finalizado',
-                    text: 'Las respuestas fueron guardadas correctamente'
+                    title: '¡Examen finalizado!',
+                    text: 'Respuestas guardadas correctamente',
+                    confirmButtonText: 'Aceptar',
+                    confirmButtonColor: '#4caf50',
+                    customClass: { popup: 'swal2-kiosk' }
                 }).then(() => {
                     window.location.href = "<?= BASE_URL ?>/evaluaciones";
                 });
             } else {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: 'No se pudo guardar el examen'
-                });
+                Swal.fire({ icon: 'error', title: 'Error', text: 'No se pudo guardar' });
             }
         },
         error: function() {
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: 'Error de conexión con el servidor'
-            });
+            Swal.fire({ icon: 'error', title: 'Error', text: 'Problema de conexión' });
         }
     });
 }
 
 document.getElementById("btnSiguiente").onclick = function() {
     let seleccion = document.querySelector('input[name="respuesta"]:checked');
-
     if (!seleccion) {
-        return Swal.fire({
-            icon: 'warning',
-            title: '¡Atención!',
-            text: 'Por favor, seleccione una respuesta antes de continuar.'
-        });
+        alert("Por favor, selecciona una opción");
+        return;
     }
-
     respuestas[preguntaActual] = parseInt(seleccion.value);
 
     if (preguntaActual < examen.length - 1) {
         preguntaActual++;
         cargarPregunta();
     } else {
-        console.log("Respuestas finales:", respuestas);
         guardarExamen();
     }
 };
@@ -159,8 +181,12 @@ document.getElementById("btnAnterior").onclick = function() {
     }
 };
 
-// Cargar la primera pregunta al iniciar
 cargarPregunta();
+
+// Opcional: fullscreen en kiosk (si el navegador lo permite)
+if (document.documentElement.requestFullscreen) {
+    // document.documentElement.requestFullscreen();  // Descomenta si quieres forzar fullscreen al cargar
+}
 
 </script>
 
