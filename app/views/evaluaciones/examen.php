@@ -12,7 +12,7 @@ $id_evaluacion = $data['id_evaluacion'];
     <section class="content">
 
         <!-- Contenedor centrado pero más ancho -->
-        <div style="max-width: 100% ; margin: 0 auto 80px auto;">
+        <div style="max-width: 100% ; margin: 0 auto 30px auto;">
 
             <div class="box box-primary">
 
@@ -35,11 +35,11 @@ $id_evaluacion = $data['id_evaluacion'];
                     <br><br>
 
                     <div class="text-center" style="margin-top: 30px;">
-                        <button id="btnAnterior" class="btn btn-default btn-lg" style="min-width: 140px;">
+                        <button id="btnAnterior" class="btn btn-default btn-lg" style="min-width: 300px;">
                             Anterior
                         </button>
 
-                        <button id="btnSiguiente" class="btn btn-primary btn-lg pull-right" style="min-width: 140px;">
+                        <button id="btnSiguiente" class="btn btn-primary btn-lg pull-right" style="min-width: 300px;">
                             Siguiente
                         </button>
                     </div>
