@@ -134,8 +134,12 @@ document.getElementById("btnSiguiente").onclick = function() {
     let seleccion = document.querySelector('input[name="respuesta"]:checked');
 
     if (!seleccion) {
-        alert("Selecciona una opción antes de continuar");
-        return;
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+            footer: '<a href="#">Why do I have this issue?</a>'
+            });
     }
 
     respuestas[preguntaActual] = parseInt(seleccion.value);
