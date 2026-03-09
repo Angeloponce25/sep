@@ -1,6 +1,6 @@
 <?php require APP_PATH . '/views/layouts/app_header.php'; ?>
-<?php require APP_PATH . '/views/layouts/navbar.php'; ?>   <!-- Comenta si no necesitas navbar en kiosk -->
-<?php require APP_PATH . '/views/layouts/sidebar.php'; ?>   <!-- Comenta la sidebar completamente en kiosk -->
+<?php require APP_PATH . '/views/layouts/navbar.php'; ?>   <!-- Comenta si no se usa en kiosk -->
+<?php require APP_PATH . '/views/layouts/sidebar.php'; ?>   <!-- Comenta si no se usa en kiosk -->
 
 <?php
 $preguntas = $data['preguntas'];
@@ -9,40 +9,40 @@ $id_evaluacion = $data['id_evaluacion'];
 
 <div class="content-wrapper" style="margin-left: 0 !important; margin-right: 0 !important; background: #fff;">
 
-    <section class="content" style="padding: 20px 40px; min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+    <section class="content" style="padding: 20px 30px; min-height: 100vh; display: flex; align-items: center; justify-content: center;">
 
-        <div style="width: 100%; max-width: 1600px; margin: 0 auto;">  <!-- Ajusta max-width según resolución de la máquina -->
+        <div style="width: 100%; max-width: 1400px; margin: 0 auto;">
 
             <div class="box box-primary" style="border: none; box-shadow: none; background: transparent;">
 
-                <div class="box-header" style="border-bottom: none; text-align: center; padding: 0 0 30px 0;">
-                    <h3 class="box-title" style="font-size: 48px; font-weight: bold; color: #333;">
+                <div class="box-header" style="border-bottom: none; text-align: center; padding: 0 0 25px 0;">
+                    <h3 class="box-title" style="font-size: 40px; font-weight: bold; color: #333;">
                         Examen Psicológico
                     </h3>
                 </div>
 
                 <div class="box-body" style="padding: 0;">
 
-                    <div class="progress" style="height: 40px; margin-bottom: 50px; border-radius: 20px; overflow: hidden;">
-                        <div id="barraProgreso" class="progress-bar progress-bar-success" style="width:0%; font-size: 24px; line-height: 40px;">
-                            <!-- Progreso visible opcional -->
+                    <div class="progress" style="height: 30px; margin-bottom: 40px; border-radius: 15px; overflow: hidden;">
+                        <div id="barraProgreso" class="progress-bar progress-bar-success" style="width:0%; font-size: 20px; line-height: 30px;">
+                            <!-- % opcional -->
                         </div>
                     </div>
 
-                    <h4 id="contadorPregunta" style="font-size: 36px; text-align: center; margin-bottom: 40px; color: #555;"></h4>
+                    <h4 id="contadorPregunta" style="font-size: 30px; text-align: center; margin-bottom: 30px; color: #555;"></h4>
 
-                    <h4 id="preguntaTexto" style="font-size: 42px; font-weight: 600; line-height: 1.4; margin-bottom: 60px; text-align: center; color: #222;"></h4>
+                    <h4 id="preguntaTexto" style="font-size: 36px; font-weight: 600; line-height: 1.4; margin-bottom: 50px; text-align: center; color: #222;"></h4>
 
-                    <div id="opciones" style="font-size: 34px; line-height: 1.8;"></div>
+                    <div id="opciones" style="font-size: 28px; line-height: 1.7;"></div>
 
-                    <div style="height: 80px;"></div> <!-- Espacio -->
+                    <div style="height: 60px;"></div>
 
-                    <div style="text-align: center; margin-top: 60px;">
-                        <button id="btnAnterior" class="btn btn-default btn-lg" style="font-size: 32px; padding: 20px 60px; min-width: 280px; margin-right: 80px; border-radius: 12px;">
+                    <div style="text-align: center; margin-top: 50px;">
+                        <button id="btnAnterior" class="btn btn-default btn-lg" style="font-size: 24px; padding: 18px 50px; min-width: 220px; margin-right: 60px; border-radius: 10px;">
                             Anterior
                         </button>
 
-                        <button id="btnSiguiente" class="btn btn-primary btn-lg" style="font-size: 32px; padding: 20px 60px; min-width: 280px; border-radius: 12px;">
+                        <button id="btnSiguiente" class="btn btn-primary btn-lg" style="font-size: 24px; padding: 18px 50px; min-width: 220px; border-radius: 10px;">
                             Siguiente
                         </button>
                     </div>
@@ -60,31 +60,31 @@ $id_evaluacion = $data['id_evaluacion'];
 <style>
     body, html {
         font-family: 'Segoe UI', Roboto, Arial, sans-serif !important;
-        -webkit-touch-callout: none; /* Evita menú contextual en touch */
+        -webkit-touch-callout: none;
         -webkit-user-select: none;
         user-select: none;
     }
     .radio label {
         display: block !important;
-        padding: 25px 30px !important;
-        margin: 20px 0 !important;
+        padding: 20px 25px !important;
+        margin: 18px 0 !important;
         background: #f8f9fa;
-        border: 3px solid #ddd;
-        border-radius: 12px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
         cursor: pointer;
         transition: all 0.2s;
     }
     .radio label:hover,
-    .radio input:checked + span {  /* Mejor visibilidad */
+    .radio input:checked + label {
         background: #e3f2fd;
         border-color: #2196f3;
     }
     .radio input[type="radio"] {
-        transform: scale(2.2);  /* Radio buttons más grandes */
-        margin-right: 20px !important;
+        transform: scale(2.0);
+        margin-right: 18px !important;
     }
     .progress-bar {
-        background-color: #4caf50 !important; /* Verde visible */
+        background-color: #4caf50 !important;
     }
 </style>
 
@@ -110,7 +110,7 @@ function cargarPregunta() {
         html += `
         <div class="radio">
             <label>
-                <input type="radio" name="respuesta" value="${i}" ${checked} style="margin-right: 25px;">
+                <input type="radio" name="respuesta" value="${i}" ${checked} style="margin-right: 20px;">
                 ${op}
             </label>
         </div>
@@ -124,8 +124,7 @@ function cargarPregunta() {
 function actualizarBarra() {
     let progreso = ((preguntaActual + 1) / examen.length) * 100;
     document.getElementById("barraProgreso").style.width = progreso + "%";
-    // Opcional: mostrar % dentro de la barra
-    document.getElementById("barraProgreso").textContent = Math.round(progreso) + "%";
+    // document.getElementById("barraProgreso").textContent = Math.round(progreso) + "%";  // descomenta si quieres ver el %
 }
 
 function guardarExamen() {
@@ -143,8 +142,7 @@ function guardarExamen() {
                     title: '¡Examen finalizado!',
                     text: 'Respuestas guardadas correctamente',
                     confirmButtonText: 'Aceptar',
-                    confirmButtonColor: '#4caf50',
-                    customClass: { popup: 'swal2-kiosk' }
+                    confirmButtonColor: '#4caf50'
                 }).then(() => {
                     window.location.href = "<?= BASE_URL ?>/evaluaciones";
                 });
@@ -182,11 +180,6 @@ document.getElementById("btnAnterior").onclick = function() {
 };
 
 cargarPregunta();
-
-// Opcional: fullscreen en kiosk (si el navegador lo permite)
-if (document.documentElement.requestFullscreen) {
-    // document.documentElement.requestFullscreen();  // Descomenta si quieres forzar fullscreen al cargar
-}
 
 </script>
 
