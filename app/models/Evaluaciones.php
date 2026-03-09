@@ -64,4 +64,29 @@ class Evaluaciones {
         return $result->fetch_assoc();
 
     }
+
+    public function guardarRespuesta($id_eval,$id_pregunta,$id_opcion,$id_paciente,$id_acto)
+    {
+
+        $sql = "INSERT INTO respuestas_examen_psicologia
+                (id_evaluacion,id_pregunta,id_opcion,id_paciente,id_acto_medico)
+                VALUES
+                ($id_eval,$id_pregunta,$id_opcion,$id_paciente,$id_acto)";
+
+        $this->db->query($sql);
+
+    }
+
+    public function finalizarExamen($id_evaluacion)
+    {
+
+    $sql = "UPDATE piv_testpsicologico
+            SET estado_examen = 2
+            WHERE id_evaluacion = $id_evaluacion";
+
+    $this->db->query($sql);
+
+    }
+
+
 }
