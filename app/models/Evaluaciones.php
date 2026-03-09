@@ -51,4 +51,17 @@ class Evaluaciones {
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function getEvaluacionInfo($id_evaluacion)
+    {
+
+        $sql = "SELECT id_paciente, id_acto_medico
+                FROM piv_testpsicologico
+                WHERE id_evaluacion = $id_evaluacion";
+
+        $result = $this->db->query($sql);
+
+        return $result->fetch_assoc();
+
+    }
 }

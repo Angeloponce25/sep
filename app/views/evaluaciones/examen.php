@@ -55,6 +55,7 @@ Siguiente
 <script>
 
 const examen = <?= json_encode($preguntas, JSON_UNESCAPED_UNICODE); ?>;
+const idEvaluacion = <?= $id_evaluacion ?>;
 
 let preguntaActual = 0;
 let respuestas = [];
@@ -100,15 +101,66 @@ function actualizarBarra(){
 
 }
 
+function guardarExamen(){
+
+    $.ajax({
+
+        url: "<?= BASE_URL ?>/evaluaciones/guardarRespuestas",
+        type: "POST",
+
+        data:{
+            id_evaluacion: idEvaluacion,
+            respuestas: respuestas
+        },
+
+        success: function(response){
+
+            if(response.trim() === "success"){
+
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Examen finalizado',
+                    text: 'Las respuestas fueron guardadas correctamente'
+                }).then(()=>{
+                    window.location.href = "<?= BASE_URL ?>/evaluaciones";
+                });
+
+            }else{
+
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'No se pudo guardar el examen'
+                });
+
+            }
+
+        },
+
+        error: function(){
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Error de conexión con el servidor'
+            });
+
+        }
+
+    });
+
+}
+
 document.getElementById("btnSiguiente").onclick = function(){
 
     let seleccion = document.querySelector('input[name="respuesta"]:checked');
 
-    if(seleccion){
-
-        respuestas[preguntaActual] = seleccion.value;
-
+    if(!seleccion){
+        alert("Selecciona una opción");
+        return;
     }
+
+    respuestas[preguntaActual] = seleccion.value;
 
     if(preguntaActual < examen.length-1){
 
@@ -120,7 +172,7 @@ document.getElementById("btnSiguiente").onclick = function(){
 
         console.log("Respuestas:", respuestas);
 
-        alert("Examen terminado");
+        guardarExamen();
 
     }
 
