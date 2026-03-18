@@ -62,7 +62,7 @@ $id_evaluacion = $data['id_evaluacion'];
         border: 2px solid #ccc;
         border-radius: 10px;
         cursor: pointer;
-        transition: all 0.25s;
+          transition: all 0.25s;
         font-weight: 500;
     }
     .radio label:hover {
@@ -133,16 +133,9 @@ function guardarExamen() {
                 Swal.fire({
                     icon: 'success',
                     title: 'Examen finalizado',
-<<<<<<< HEAD
                     text: 'Las respuestas fueron guardadas correctamente'
                 }).then(()=>{
                     window.location.href = "<?= BASE_URL ?>/dashboard";
-=======
-                    text: 'Las respuestas fueron guardadas correctamente',
-                    confirmButtonText: 'Aceptar'
-                }).then(() => {
-                    window.location.href = "<?= BASE_URL ?>/evaluaciones";
->>>>>>> c2a61df16f0ed407ad2dad5845af0a2723a6f0ae
                 });
             } else {
                 Swal.fire({
