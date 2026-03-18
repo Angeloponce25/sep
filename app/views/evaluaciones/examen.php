@@ -122,7 +122,7 @@ function guardarExamen(){
                     title: 'Examen finalizado',
                     text: 'Las respuestas fueron guardadas correctamente'
                 }).then(()=>{
-                    window.location.href = "<?= BASE_URL ?>/evaluaciones";
+                    window.location.href = "<?= BASE_URL ?>/dashboard";
                 });
 
             }else{

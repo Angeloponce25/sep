@@ -1,9 +1,11 @@
 <?php
 
+require_once '../app/models/User.php';
 require_once '../app/models/Evaluaciones.php';
 
 class EvaluacionesController extends Controller {
 
+    private $userModel;
     private $evaluacionesModel;
 
     public function __construct() 
@@ -84,6 +86,17 @@ class EvaluacionesController extends Controller {
             $this->evaluacionesModel->finalizarExamen($id_evaluacion);
 
             echo "success";
+
+            $id=$_SESSION['user']['id_paciente'];
+        
+            $paciente = $this->userModel->getPacienteById($id);
+            $evaluaciones = $this->evaluacionesModel->getEvaluacionesPaciente($id);
+
+            $this->view('dashboard/index', [
+                'title' => 'Dashboard',
+                'data' => $paciente,
+                'evaluaciones' => $evaluaciones
+            ]);
 
         }
 
